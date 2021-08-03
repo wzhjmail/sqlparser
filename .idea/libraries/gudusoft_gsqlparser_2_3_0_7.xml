@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gudusoft.gsqlparser-2.3.0.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/gudusoft.gsqlparser-2.3.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

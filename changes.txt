@@ -1,0 +1,2021 @@
+version history of general sql parser:
++ GSP Java version 2.3.0.7(2021-06-02) 
+  - [SQLServer,Azure Synapse] support Azure Synapse Analytics CTAS syntax.
+  
++ GSP Java version 2.3.0.6(2021-06-01) 
+  - [SparkSQL] able to detect directory path set in options clause of INSERT OVERWRITE DIRECTORY statement.
+
++ GSP Java version 2.3.0.5(2021-05-27) 
+  - [Hive] support dayofweek in extract function.
+  
++ GSP Java version 2.3.0.3(2021-05-25) 
+  - [MySQL] fix a bug can't handle string type in cast function.
+  
++ GSP Java version 2.3.0.2(2021-05-24) 
+  - [Hive] support path without enclosed by quote in load statement 
+  - [Hive] support colon in column definition in create table statement.
+  
++ GSP Java version 2.3.0.1(2021-05-21)
+  - [SparkSQL] Fully support SparkSQL.
+
++ GSP Java version 2.2.3.6(2021-05-19)
+  - [API] rename THiveDistributeBy to TDistributeBy,  THiveSortBy to TSortBy, THiveClusterBy  to TClusterBy and move to gudusoft.gsqlparser.nodes
+  
++ GSP Java version 2.2.3.6(2021-05-18)
+  - [API] rename THiveLateralView to TLateralView and move to gudusoft.gsqlparser.nodes
+
++ GSP Java version 2.2.3.4(2021-05-14)
+  - [Teradata] fix a bug can't parse multiple variables in declare statement.
+  
++ GSP Java version 2.2.3.4(2021-05-12)
+  - [Oracle] support PARALLEL_ENABLE in PROCEDURE
+  
++ GSP Java version 2.2.3.3(2021-05-11)
+  - [greenplum, redshift] fix a bug that regular identifier should be convert to lowercase before comparision.
+  - [Oracle] support character function in LISTAGG
+  - [API] Return type of TListaggOverflow.getTruncation_indicator() change from TConstant to TExpression
+
+
++ GSP Java version 2.2.3.2(2021-05-10)
+  - [API] TSQLObject.compareTo() replaced by TSQLEnv.compareIdentifier()
+  - [Teradata] support with clause in pivot clause.
+  
++ GSP Java version 2.2.3.1(2021-04-30)
+  - [Teradata] fix a bug can't parse pivot clause.
+  - [API] add new method TPivotClause.getPivotTable() return table derived from this clause.
+
+
++ GSP Java version 2.2.3.0(2021-04-25)
+  - [Oracle] long qualifed name in object access expression.
+  - [Oracle] support qualified type name with 4 parts.
+  - [Teradata] able to detect consume property in select statement.
+  - [gettablecolumn/Oracle] RowId treated as column name.
+  - [Teradata] able to get normal sql statement after Teradata multiload statement.
+  - [netezaa] able to get all external table option, TExternalTableOption
+  - [general] star column in select list linked to columns of CTE.
+
++ GSP Java version 2.2.3.0(2021-04-24)
+  - [SQL Server] fix a bug can't handle N 'yes' literal correctly.
+
+
++ GSP Java version 2.2.2.9(2021-04-24)
+  - [Hive] fix a bug table alias in lateral view is optional.
+  - [Hive] support not null/primary key/unique key/foreign key 
+
++ GSP Java version 2.2.2.9(2021-04-22)
+  - [Hive] timestamp used in function.
+  
++ GSP Java version 2.2.2.8(2021-04-22)
+  - [data lineage] discover data lineage of foreign key in create table 
+  - [snowflake] support role during connect to snowflake database.
+
++ GSP Java version 2.2.2.8(2021-04-21)
+  - [Teradata] support unpivot clause.
+  - [Teradata] fix a bug can't parse COLLECT STATS when VARIABLE is used.
+  - [sql server] fix a bug can't recoginze CREATE OR ALTER PROCEDURE if OR ALTER is added.
+  - [general] add schema to a table if the table can be found in SQLEnv.
+
++ GSP Java version 2.2.2.8(2021-04-19)
+  - [Teradata] fix a bug can't recogine table alias in nested subquery.
+
+
++ GSP Java version 2.2.2.7(2021-04-19)
+  - [API/netezaa] add new class TExternalTableOption that represent netezza external table option.
+  
++ GSP Java version 2.2.2.6(2021-04-15)
+  - [general] data lineage bug in insert into clause.
+  
++ GSP Java version 2.2.2.6(2021-04-14)
+  - [API/greenplum] Add new class TGreenplumSQLDataSource, connect to greenplum to fetch metadata.
+
++ GSP Java version 2.2.2.5(2021-04-14)
+  - [API] add new method of TObjectName: public ArrayList<String> getColumnsLinkedToStarColumn()
+  - [general] Attached detailed columns to a star column if metadata is provided.
+  
++ GSP Java version 2.2.2.4(2021-04-06)
+  - [Teradata] support drop unique index statement.
+  - [Hive] fix a bug can't parse numeric data type with scale.
+
++ GSP Java version 2.2.2.4(2021-04-02)
+  - [API] TBlockSqlStatement.outerLabelName replaced by getLabelName()
+  - [API] TPostgresqlCreateFunction is removed, please use TCreateFunctionStmt instead. 
+  - [API] TSnowflakeCreateFunctionStmt is removed, please use TCreateFunctionStmt instead.
+  - [general] PL/pgSQL compiler working in progress
+  
++ GSP Java version 2.2.2.2(2021-04-01)
+  - [general] get statement error doesn't effect the parse process of other SQL statements in the same script.
+  - [snowflake] support use role, use warehouse, use schema, show procedures.
+  
++ GSP Java version 2.2.2.1(2021-03-29)
+  - [Oracle] support Arbitrary_0.sName IN BUILTIN.DF(entity_AB.sName)
+  - [Oracle] support distinct keyword in listagg function.
+  - [Oracle] support ENABLE ROW MOVEMENT in ALTER TABLE, CREATE TABLE
+  - [general] add new enum value: dbvendor.dbvazuresql, dbvexasol, dbvsparksql
+
++ GSP Java version 2.2.2.0(2021-03-26)
+  - [snowflake] support execute as clause in create procedure.
+  - [snowflake] support not null option in return type of create procedure.
+  - [general] fix a column match bug: "COL1" should be the same as COL1
+  - [Oracle] partition by clause can be put after table alias.
+
+
++ GSP Java version 2.2.1.9(2021-03-25)
+  - [Hive] support condition of cross join.
+
++ GSP Java version 2.2.1.8(2021-03-19)
+  - [Hive] support interval literal
+
++ GSP Java version 2.2.1.8(2021-03-19)
+  - [Hive] support multi-line comment.
+  
++ GSP Java version 2.2.1.7(2021-03-17)
+  - [SQL Server] fix a bug can't like x.[age] to table alias: [x]
+  - [SQL Server] setDbObjectType of first argument in dateadd/datediff/datename/datepart function to EDbObjectType.date_time_part
+  - [DB2] support TRUNCATE table statement inside procedure.
+  - [SQL Server] fix a bug can't hanlde IDENTITY(1,1) after primary key clause.
+  - [DB2] fix a bug can't parse VARBINARY datatype with length.
+  - [Hana] fix a bug can't parse ALPHANUM datatype.
+  
+
+
++ GSP Java version 2.2.1.6(2021-03-12)
+  - [API] DataFlowAnalyzer, use public List<ErrorInfo> getErrorMessages() instead of generateDataFlow(String errorBuffer) 
+  - [data lineage] fix a bug can't handle values clause in from clause.
+  - [DB2] support FOR SBCS/DBCS/MBCS DATA code page layouts
+  - [DB2] support without time zone in TIMESTAMP data type.
+	
+
++ GSP Java version 2.2.1.6(2021-03-11)
+  - [Sybase] fix a bug can't handle || when @varname is followed.
+
+
++ GSP Java version 2.2.1.5(2021-03-05)
+  - [snowflake] fix a bug can't parse sql inside create function if LANGUAGE SQL is specified.
+  
++ GSP Java version 2.2.1.3(2021-03-04)
+  - [Teradata] fix a bug can't pivot keyword used as table alias.
+  - [snowflake] support create stream statement.
+  - [snowflake] support varchar collate clause in data type.
+  
++ GSP Java version 2.2.1.2(2021-03-03)
+  - [greenplum] support array opertor @>, <@
+  
++ GSP Java version 2.2.1.1(2021-03-01)
+  - [greenplum] support declare/begin/end block.
+  
++ GSP Java version 2.2.1.0(2021-02-28)
+  - [bigQuery] support create external table, able get external_table_option.
+  - [gettablecolumn] fix a bug un-qualified column in select list of subquery in the join clause was linked to wrong table.
+
++ GSP Java version 2.2.0.9(2021-02-26)
+  - [DB2] support nchar, nvarchar variable length.
+  - [snowflake] support copy grants clause in create view statement.
+  - [snowflake] support time function.
+  - [snowflake] support date keyword used as table alias.
+
+
++ GSP Java version 2.2.0.8(2021-02-22)
+  - [sqlflow] add option to ignore coordinate in the output json.
+
++ GSP Java version 2.2.0.7(2021-02-19)
+  - [Hana] support variable declare before AS keyword in create function/procedure.
+  - [Hana] fix a bug can't parse SQL system schemas start with  underscore _  
+  - [Hana] fix a bug can't parse float datatype without specify precision.
+  - [Hana] fix a bug can't parse RETURNS TABLE () in CREATE FUNCTION.
+	
+
++ GSP Java version 2.2.0.7(2021-02-18)
+  - [bigquery] support TEMP/TEMPORARY keyword in create table statement.
+
++ GSP Java version 2.2.0.6(2021-02-09)
+  - [Netezza] support ignore nulls in last_value/first_value function.
+  - [Netezza] support identifier in syntax like #pTableName#
+  - [SQL Server] fix a bug can't parse current row in over clause.
+  - [PostgreSQL] support LATERAL Subqueries.
+  - [API] add new class: public class TListaggOverflow,  TFunctionCall: new property: public TListaggOverflow getListaggOverflow()
+  - [Oracle] able to get all properties from listagg_overflow_clause.
+
++ GSP Java version 2.2.0.5(2021-02-08)
+  - [general] able to detect syntax error when a column selected from a subquery is not listed in the subquery select list.
+
+
++ GSP Java version 2.2.0.5(2021-02-07)
+  - [general] fix a null exception parsing create schema statement inside stored procedure.
+
++ GSP Java version 2.2.0.4(2021-02-07)
+  - [snowflake] fix a bug recognize date time part as column.
+  - [redshift] fix a bug return wrong coordinates in create function.
+
++ GSP Java version 2.2.0.4(2021-02-05)
+  - [redshift] coordinate inside create function is not correct.
+  - [general] able to detect syntax error of tokenize in sqlparser.getSyntaxErrors()
+
+
++ GSP Java version 2.2.0.3(2021-02-03)
+  - [Snowflake] toString() return null when multi-join clause is used in select statement in insert statement.
+  - [Hana] support declare, if statement inside stored procedure.
+  - [Hana] support truncate/drop table inside stored procedure.
+  - [Hana] fix a bug can't parse CURSOR Declaration with the optional DECLARE Keyword
+  - [Hana] fix a bug can't handle # in Create Temporary table statements
+  - [Hana] support minus set operator.
+  - [Hana] fix a bug can't parse subquery in insert statement.
+  - [Hana] fix a bug can't parse generated by default as IDENTITY
+  - [Hana] support upsert statement inside stored procedure.
+
+
++ GSP Java version 2.2.0.2(2021-02-01)
+  - [API] add SQL statement and position in token list to the TSyntaxError
+  - [Hive,Impala] fix a bug can't parse join clause without specify a join condition.
+  - [PostgreSQL] fix a bug not set end token of select statement inside stored procedure.
+  
++ GSP Java version 2.2.0.1(2021-01-29)
+  - [SOQL] support salesforce SOQL.
+  
++ GSP Java version 2.1.3.7(2021-01-27)
+  - [general/API] add TCustomSqlStatement.getSyntaxHints(), TCustomOracleSqlStmt.getSyntaxErrors().
+  - [snowflake] fix a bug: coordinates returned are incorrect.
+
++ GSP Java version 2.1.3.6(2021-01-22)
+  - [general] The database used in the use database statement will affect the table used in select statement. 
+  - [general] The database used in the use database statement will affect the view used in create view statement. 
+
+
++ GSP Java version 2.1.3.5(2021-01-21)
+  - [SQL Server] fix a bug the database name is not located correctly in create database statement. 
+  - [Oracle] support drop index clause in alter table.
+
+
++ GSP Java version 2.1.3.4(2021-01-20)
+  - [general] The database used in the use database statement will affect the table used in create table statement. 
+		
++ GSP Java version 2.1.3.3(2021-01-19)
+  - [DB2] fix a bug can't handle for loop inside stored procedure.
+  - [Oracle] on commit clause in create table will cause parse error.
+  - [Oracle] grant execute statement after create proceudre can be recogined correctly.
+  - [dlineage] fix a bug sql generates xml that references a target which does not exist.
+
+
++ GSP Java version 2.1.3.2(2021-01-18)
+  - [Oracle] Concatenating an inquiy directive (eg. $$PLSQL_UNIT) inside a procedure call throws the error
+  - [Oracle] create trigger acceptChildren() method NPE
+  - [PostgreSQL] support FOR EACH STATEMENT  clause in CREATE TRIGGER.
+  - [Redshift] fix a bug can't parse create function due to the STABLE put after ANGUAGE sql
+  - [Postgresql] improved support for create function with embedded plpgsql.
+  - [Hive]  parser can't handle forward slash in a qualified column name
+  - [getTableColumn] fix a bug that column alias miss handling.
+  - [Hive] Parser doesn't handle carriage returns properly in table definitions
+  
+
++ GSP Java version 2.1.3.1(2021-01-14)
+  - [DB2] support Anonymous block statements.
+  - [Impala] fix a bug can't handle order by clause in window clause.
+
+
++ GSP Java version 2.1.3.0(2021-01-11)
+  - [SQL Server] fix a bug can't parse for system_time all clause.
+  - [SQL Server] fully support openjson.
+  
++ GSP Java version 2.1.2.9(2021-01-02)
+  - [snowflake] able to get schema information.
+  
++ GSP Java version 2.1.2.8(2020-12-26)
+  - [snowflake] fully support copy into, put statement.
+  
++ GSP Java version 2.1.2.7(2020-12-24)
+  - [getTableColumn] fix a bug can't recognize column correct in syntax like table.column.property.
+  - [Snowflake] fully support create external table, create stage.
+  
++ GSP Java version 2.1.2.6(2020-12-21)
+  - [Oracle] Able to get all parameter from LISTAGG function.
+  - [gettablecolumn] fix a bug column alias recognized as column in lateral column alias reference 
+  - [snowflake] fix a bug can't parse date function.
+
+
++ GSP Java version 2.1.2.6(2020-12-18)
+  - [Postgresql, Greenplum] fix a bug can't parse syntax like: grouy by (colum1, column2)
+  - [Postgresql, Greenplum] support comma separator in trim fuction. 
+  - [Postgresql, Greenplum] support set statement inside procedure.
+  - [Postgresql, Greenplum] POSITION can be used as table alias.
+
++ GSP Java version 2.1.2.6(2020-12-15)
+  - [SQL Server] support create or alter view syntax.
+  
++ GSP Java version 2.1.2.5(2020-12-11)
+  - [general] support utf-8 NO-BREAK SPACE inside SQL query.
+
++ GSP Java version 2.1.2.5(2020-12-09)
+  - [MySQL] fix a nullexception bug for insert statement inside create trigger.
+
++ GSP Java version 2.1.2.5(2020-12-08)
+  - [Snowflake] TEXT can be used as column name.
+  - [Netezza] support DISTRIBUTE ON HASH.
+  - [SQL Server] fix a bug can't parse 0E number.
+  
++ GSP Java version 2.1.2.4(2020-12-04)
+  - [data lineage] sql server table functions not showing up
+  - [Hive] fix a bug can't detect column used in is not null.
+  
++ GSP Java version 2.1.2.3(2020-12-01)
+  - [Hana] support CREATE OR REPLACE FORCE EDITIONABLE VIEW
+  
++ GSP Java version 2.1.2.2(2020-11-19)
+  - [Oracle] support long name in stored procedure.
+  - [SQL Server/data lineage] fix a NullPointerException of start and end token when process table function.
+  
++ GSP Java version 2.1.2.1(2020-11-03)
+  - [general] fix a bug PseudoRows column in create table.
+  
++ GSP Java version 2.1.2.0(2020-11-02)
+  - [General] fix a bug that raise NullPointerException in TFunctionCall.loadTableFunctions().
+  - [MySQL] Able to fetch after column clause in add column clause.
+  - [dlineage] data lineage feature merged into core.
+
+  
++ GSP Java version 2.1.1.0(2020-10-28)
+  - [bigquery] fully support create function.
+  - [bigquery] fully support create procedure.
+
++ GSP Java version 2.1.1.0(2020-10-26)
+  - [Biqquery] support string_agg function.
+  - [Biqquery] fix a bug can't parse time keyword when it used as a column name.
+  - [general] support Oracle built-in table fucntion.
+
+  
++ GSP Java version 2.1.0.9(2020-10-23)
+  - [redshift] support with no schema binding clause in create view.
+  - [getTableColumn] fix a bug can't link column in set clause to the table in the from clause of update statement.
+  - [dlieange] fix bug: Lineage is incorrect when view definition has unqualified tables
+
++ GSP Java version 2.1.0.8(2020-10-22)
+  - [Teradata] support xmltable function.
+  - [SQL Server] support virtual column: %%PHYSLOC%%
+  - [SQL Server] fix a bug fails for trigger if IF UPDATE keyword used with another logical operator
+	
++ GSP Java version 2.1.0.8(2020-10-21)
+  - [SQL Server] fix a bug when parse clause using with (index)
+  - [Teradata] fix a bug can't recognize double !! marks as a string Concatenation Operator
+  - [SQL Server] support empty body inside begin catch ... end catch.
+  - [Oracle] support AS EXTERNAL in CREATE PROCEDURE, the AS EXTERNAL clause was an alternative way of declaring a C method. This clause has been deprecated and is supported for backward compatibility only.
+  - [Oracle] support default on null clause on column definition.
+  - [SQL Server] support sorted column in index clause.
+
+  
++ GSP Java version 2.1.0.7(2020-10-16)
+  - [gettablecolumn/SQL Server] support to checking column of SQL Server table function while build relationship between table and column.
+  
++ GSP Java version 2.1.0.6(2020-10-15)
+  - [Snowflake] support create file format statement without specify type clause.
+  - [general] fix a bug miss processing qualified name in the quoted identifier.
+  - [gettablecolumn] fix a bug column in subquery can't find table in uplevel table due to union set.
+
+  
++ GSP Java version 2.1.0.5(2020-10-14)
+  - [gettablecolumn] fix a bug cause by the comparision of [columnName] and columnName
+	
++ GSP Java version 2.1.0.3(2020-10-10)
+  - [Oracle] fix a bug can't parse XMLELEMENT function with a name parameter.
+  - [Oracle] support table function.
+  - [Oracle] support passing clause in xmlquery function.
+  - [Hive] support qualifed table name in alter table.
+  
++ GSP Java version 2.1.0.2(2020-10-09)
+  - [SQL Server] all keywords can be used as column name is marked correctly.
+  - [Snowflake] Able to get like table name in create table.
+  - [Snowflake] support join without on condition.
+  - [Snowflake] support between condition in select list.
+  - [Snowflake] number, identifer can be used as column name.
+  - [Teradata] support cast() at location syntax.
+	
+
++ GSP Java version 2.1.0.2(2020-10-07)
+  - [Oracle] identifier can be used as the second parameter of the LISTAGG function.
+  - [Oracle/plsql] fix a bug cannot parse the TYPE statement when a variable is passed inside the Varchar2() datatype.
+  - [Oralce/plsql] fix a bug BULK COLLECT INTO with LIMIT keyword cannot be parsed if limit is wrapped brackets
+
+  
++ GSP Java version 2.1.0.1(2020-10-05)
+  - [Sybase] support quoted table name like schemaName.'quoted_test_table'
+  - [Hana] support window clause of function.
+  - [Oracle] able to separate block and commit statement after it without a / command.
+  - [Hana] fix a bug parse table name in quoted string.
+
++ GSP Java version 2.1.0.1(2020-10-04)
+  - [SQL Server] keyword 'content' can't be recognized as column name.
+  - [Snowflake] fix a bug can't recognize column in qualified name like this: DB.SCHEMA.TABLE_NAME.COLUMN_NAME
+
+  
++ GSP Java version 2.1.0.0(2020-10-02)
+  - [general] refactor the TParseTreeNode.toString() to support quick modify parse tree and build the query text.
+  - [Hive] support hive 2.1
+  - [Teradata] support backtick literal.
+  - [Teradata] fix a bug the group by clause will be return null if only having clause is used.
+  - [API] change TPTNodeList<THiveLateralView> to ArrayList<THiveLateralView>
+  
++ GSP Java version 2.0.9.6(2020-09-17)
+  - [snowflake] support quaify clause.
+  - [general] if a node is already removed, then setString() will be just ignored.
+  
++ GSP Java version 2.0.9.5(2020-09-16)
+  - [general] fix a bug can't remove having keyword while remove having clause.
+  - [general] support between expr in removeMe() method.
+
+  
++ GSP Java version 2.0.9.4(2020-09-15)
+  - [API] TParseTreeNode.setText() change from public to private, please use setString() instead.
+  - [API] rename TParseTreeNodeList.removeElementAt() to removeElementWithoutSyncTokens().
+ 
++ GSP Java version 2.0.9.3(2020-09-14)
+  - [general] toString() bug fix for expression.
+  
++ GSP Java version 2.0.9.2(2020-09-10)
+  - [general] support setLeftOperand(null),setRightOperand(null) to remove sub-node from expression.
+
+ 
++ GSP Java version 2.0.9.1(2020-09-09)
+  - [general] TExpression.remove2() is supported in double chain token list operation.
+  
++ GSP Java version 2.0.9.0(2020-09-09)
+  - [general] rewrite the TParseTreeNode to support quick access, modify and rebuild SQL.
+  - [general] end token of TJoin doesn't link correctly.
+
++ GSP Java version 2.0.9.0(2020-09-01)
+  - [API] TParseTreeNode, public TParseTreeNodeList getNodesStartFromThisToken() to public Stack<TParseTreeNode> getNodesStartFromThisToken()
+
+  
++ GSP Java version 2.0.8.3(2020-08-26)
+  - [SQL Server] fix a bug statement inside begin catch block is not picked up.
+  - [SQL Server] role, format keyword will be picked up as column correctly.
+
++ GSP Java version 2.0.8.3(2020-08-25)
+  - [PostgreSQL] able to get table/column from copy statement.
+
++ GSP Java version 2.0.8.3(2020-08-24)
+  - [API] TCreateSequenceStmt.options change from TPTNodeList<TSequenceOption> to ArrayList<TSequenceOption>
+  - [Teradata] support map option in create table.
+  - [Teradata] support cast function in IN expression.
+  - [MySQL] support position function.
+  
++ GSP Java version 2.0.8.2(2020-08-20)
+  - [API] Iterator interface implmented in TParseTreeNode and Iterable interface implmented in TParseTreeNodeList
+		use forEach instead of forEachRemaining if you need to iterate nodes in the TParseTreeNodeList.
+		http://support.sqlparser.com/gsp-api/gsp-sql-parse-tree-node-iterator/
+
+
+  - [Snowflake] support top clause which is not documented in the official site.
+  https://docs.snowflake.com/en/sql-reference/sql/select.html
+
+  - [Redshift] support generated by default as identity column attribute.
+  - [MySQL] fix a bug column with decimal datatype is being returned as dec instead of decimal
+  
++ GSP Java version 2.0.8.1(2020-08-07)
+  - [Hana/getTableColumn] fix a bug can't get table/column in a creat function statement without parameter.
+  - [Hana/getTableColumn] fix a bug can't parse the return statement inside procedure.
+  - [Hana] able to parse function derived column.
+  - [Hana] able to parse WITH STATIC CACHE AT LOCATION 'myhost2:00002' in create view.
+  - [Hana] support with expression macros clause in create view statement.
+  - [Hana] support with mask clause in create view statement.
+  - [Hana] support parameterized_view_clause.
+
+  
++ GSP Java version 2.0.8.0(2020-08-06)
+  - [snowflake/API] TCreateFileFormatStmt.getFormatOptions() returns the text of the file format options.
+  - [getTableColumn/General] fix a bug link column in the insert table which shoulb be belonged to subquery.
+  
++ GSP Java version 2.0.7.9(2020-08-04)
+  - [Snowflake] support create materalized view.
+  - [Snowflake/API] TCreateTableOption.getCopyOptions() reprsents for STAGE_COPY_OPTIONS.
+  - [Snowflake/API] add TCreateTableOption to represents for the create table option. 
+  
++ GSP Java version 2.0.7.7(2020-07-31)
+  - [Teradata] support prepare statement inside stored procedure.
+  - [API] TMySQLPrepareStmt rename to TPrepareStmt move from package gudusoft.gsqlparser.stmt.mysql to package gudusoft.gsqlparser.stmt
+  - [API] TMySQLPrepareSqlNode rename to TPrepareSqlNode move from package gudusoft.gsqlparser.nodes.mysql to package gudusoft.gsqlparser.nodes
+  - [Teradata] able to get fetch statement inside procedure.
+  - [Teradata] able to detect set statement(TMssqlSet), but only text information is available.
+  - [API] replace TTeradataCreateProcedure with TCreateProcedureStmt
+  - [scriptWriter] support WITH (IGNORE_DUP_KEY = OFF), ON [PRIMARY] in create table statement.
+  
+  
++ GSP Java version 2.0.7.6(2020-07-30)
+  - [scriptWriter] fix a bug add additional bracket in alter table add column clause.
+  - [general] fix a null exception when access  TSelectSqlStatement.getResultColumnList() in a select statement with SET operator.
+	
+
++ GSP Java version 2.0.7.6(2020-07-29)
+  - [gettablecolumn] fix a bug can't link xml type column to table.
+
+  
++ GSP Java version 2.0.7.5(2020-07-25)
+  - [general/API] support with group in function. TWithinGroup TFunctionCall.getWithinGroup()
+  - [snowflake] support WITH LOCAL TIME ZONE
+  - [snowflake] support datetime with length specified.
+  - [snowflake] fully support AUTOINCREMENT
+
++ GSP Java version 2.0.7.5(2020-07-23)
+  - [general/bigquery] able to pick table and schema name in a quoted identifier like `schemaName.tableName` 
+
+
++ GSP Java version 2.0.7.5(2020-07-20)
+  - [API] add new method for TParseTreeNode: public ENodeStatus getNodeStatus()
+  - [API] TParseTreeNode implements Iterable<TSourceToken>, public Iterator<TSourceToken> iterator().
+
+  
++ GSP Java version 2.0.7.4(2020-07-17)
+  - [dlineage] fix a StackOverflowError bug handling union all operator.
+  
++ GSP Java version 2.0.7.4(2020-07-15) 
+  - [Oracle] support JSON_QUERY function.
+  
++ GSP Java version 2.0.7.3(2020-07-14) 
+  - [Teradata] support xmlcast, xmlserialize, xmlelement, xmlroot, xmlforest function.
+
++ GSP Java version 2.0.7.3(2020-07-09) 
+  - [Oracle] support SEGMENT CREATION IMMEDIATE clause.
+  
++ GSP Java version 2.0.7.2(2020-07-06) 
+  - [Hive] support subquery in create table statement.
+  - [general] type of database name in create database, drop database statement was set correctly.
+  - [general/visitor] able to visit database name in create database, drop database statement.
+  - [Hive] support exists condition.
+  - [general] TColumnDefinition.acceptChildren() improved to support datatype and column name.
+  
++ GSP Java version 2.0.7.1(2020-07-04) 
+  - [SQL Server] support xml method in from clause.
+
++ GSP Java version 2.0.7.1(2020-07-02) 
+  - [SQL Server] xml method improvement.
+
++ GSP Java version 2.0.7.0(2020-06-27) 
+  - [SQL Server] fix a bug can't support if exists clause in drop constraint clause of alter table.
+
+  
++ GSP Java version 2.0.6.9(2020-06-24) 
+  - [snowflake] support full subquery in copy into statement.
+  - [snowflake] fix a bug can't parse the path name includes both number and character.
+  - [snowflake] support character datatype without specify the length.
+
+
++ GSP Java version 2.0.6.9(2020-06-18) 
+  - [General] fix bug can't get datatype name when it is not recognized correctly.
+  - [API] add TSelectSqlStatement.isValueClause() to determine whether a TSelectSqlStatement class represents a values-clause or not.
+
+
++ GSP Java version 2.0.6.9(2020-06-17) 
+  - [Snowflake] support if not exists used after table name in create table statement.
+
+  
++ GSP Java version 2.0.6.8(2020-06-12) 
+  - [SQL Server] support order_clause of STRING_AGG.
+  - [PostgreSQL] support call statement inside procedure.
+  - [Hive] fix a bug can't parse identifier if space inside ` `.
+  - [DB2] support cursor statement in declare cursor.
+  - [DB2] support COMMIT ON RETURN in CREATE PROCEDURE statement.
+	
+
++ GSP Java version 2.0.6.8(2020-06-11) 
+  - [Oracle] support concatenate operator in unpivot_in_clause_item.
+  - [Oracle] support respect|ignore nulls option of last_value|first_value function.
+  - [Oracle] fix a bug treat a. as a sqlplus command.
+
+  
++ GSP Java version 2.0.6.7(2020-06-10) 
+  - [General] Add TBaseType.c_createTableStrictParsing, if it's false, the parser will try recover from the parsign error
+  and only parse the part inside create table ().  Default is false.
+  - [Oracle] support listagg function.
+  
++ GSP Java version 2.0.6.6(2020-06-08) 
+  - [general] Able to detect duplicate column in create table statement.
+  
++ GSP Java version 2.0.6.5(2020-05-29) 
+  - [scriptWriter/MySQL] fix a bug INTERVAL 1 DAY not handled correclty.
+  - [Teradata] support temporalqualifier in create view statement.
+  
++ GSP Java version 2.0.6.4(2020-05-28) 
+  - [snowflake] support $ symbol in identifier.
+  - [Oracle] Able to detect syntax error of create table with invalid create table option.
+				
++ GSP Java version 2.0.6.4(2020-05-27)
+  - [API] add new method:¡¡public void TParseTreeNode.addToTokenChain(TSourceToken anchorToken, boolean beforeAnchorToken)
+ 
++ GSP Java version 2.0.6.4(2020-05-26)
+  - [API] add public void TParseTreeNode.removeFromTokenChain(), remove the tokens of node from the token list.
+
++ GSP Java version 2.0.6.4(2020-05-25)
+  - [API] add TParseTreeNode.setText() method.
+
+  
++ GSP Java version 2.0.6.3(2020-05-21)
+  - [general/API] move public EDbVendor dbvendor; from TCustomSqlStatement to TParseTreeNode
+
++ GSP Java version 2.0.6.2(2020-05-20)
+  - [sqlenv] Able to pickup columns of temporary table in the select into clause.
+  
++ GSP Java version 2.0.6.1(2020-05-15)
+  - [SQL Server] fix a bug can't recognize COST as column name.
+  - [SQL Server] fix a bug can't get the end token of if statement. 
+
++ GSP Java version 2.0.6.1(2020-05-13)
+  - [PostgreSQL] support performance statement inside procedure.
+  - [PostgreSQL] fix a StringIndexOutOfBoundsException parsing some CREATE FUNCTION statements with small function body.
+  - [SQL Server] fix a bug can't parse writetext inside stored procedure.
+
+  
++ GSP Java version 2.0.6.1(2020-05-13)
+  - [toXML] able to get columns of the alias clause if any.
+  - [toXML/DB2] support values clause in xml output.
+
+
++ GSP Java version 2.0.6.1(2020-05-12)
+  - [redshift] able to get arguments from listagg function.
+  - [API] introduce new public enum ENullOrder
+  - [API] introduce public ENullOrder getNullOrder() in TOrderByItem
+  - [scriptWriter] support nulls first/nulls last in order by clause.
+  - [redshift] support nulls first/nulls last in order by clause.
+  - [Sybase] support statement list inside create function body without specify begin/end.
+
++ GSP Java version 2.0.6.1(2020-05-11)
+  - [Hana] support qualified name in assignment statement.
+  - [SQL Server] support using xml index in create xml index statement.
+
++ GSP Java version 2.0.6.1(2020-05-09)GSP Java version 2.0.6.1(2020-05-09)
+  - [Oracle] able to return function type correctly for contains function.
+
++ GSP Java version 2.0.6.0(2020-05-08)
+  - [Oracle] support GENERATED AS IDENTITY in column definition.
+
++ GSP Java version 2.0.6.0(2020-05-07)
+  - [PostgreSQL] fix a bug can't parse for statement.
+  - [PostgreSQL] support into name list of select statement inside create procedure.
+  - [MySQL] support CTE used in create view.
+  - [redshift] support nulls first|last clause in order by .
+  - [redshift] within group clause in listagg function is optional.
+	  
++ GSP Java version 2.0.6.0(2020-05-07)
+  - [Sybase] support number_of_partitions of partition by hash clause.
+  - [snowflake] support current_user with/without parentheses.
+
++ GSP Java version 2.0.6.0(2020-05-06)
+  - [Sybase] support create function without specify the argument and parenthesis.
+  - [Teradata] able to detect label even if there are space between naname and : 
+  - [PostgerSQL] support create materialized view statement.
+  - [Oracle] fix a bug can't parse varying after character type.
+  - [demo/toXML] fix a bug CTE appears twice in the select statement.
+  - [DB2] fix a bug can't use 'NUMBER' as function parameter name
+
++ GSP Java version 2.0.5.9(2020-04-28)
+  - [SQL Server] fix a bug that ++@ breaks parsing.
+  - [Netezza] able to get length of nvarchar data type.
+  - [Teradata] support no fallback and checksum = default is present in create join index query.
+  - [PostgreSQL] fix a bug report wrong coordinates in function definition.
+  - [Hive] support union operator in create view statement.
+  - [DB2] support db2 trigger syntax with mode db2sql secured
+  - [DB2] support no optons between return clause and function body in create function
+  - [DB2] support substring CODEUNITS16/CODEUNITS32/OCTETS arguments.
+  - [Hana] support variable initialized inline.
+  - [Hana] support empty parameter in create procedure.
+  - [sybase] support create or replace proc statement.
+  - [redshift] # character can be used in identifier.
+  - [MySQL] support NVARCHAR datatype in procedure parameter.
+
++ GSP Java version 2.0.5.9(2020-04-27)
+  - [PostgerSQL] fix a bug can't parse values clause when question mark ? is used.
+  - [DB2] support fetch next clause.
+  - [Hana] fix a bug can't recognize rank() over clause.
+  - [Hana] support nvarchar without specify a length.
+  - [SQL Server] support create external language.
+
++ GSP Java version 2.0.5.9(2020-04-26)
+  - [API/SQL Server] use TDropFunctionStmt to represent drop function statement.
+  - [SQL Server] support if exists clause in drop function.
+
++ GSP Java version 2.0.5.8(2020-04-23)
+  - [SQL Server] support if not exists clause in create table statement.
+  - [Netezza] support exec statement.
+  - [Netezza] fix a bug can't parse qualified table name in drop table statement.
+  - [PostgreSQL] support positional parameter like \$1
+  - [PostgreSQL] add support for exec immediate inside stored procedure.
+  - [Netezza] fully support create procedure.
+
++ GSP Java version 2.0.5.7(2020-04-21)
+  - [Oracle] support relational table function.
+
+  
++ GSP Java version 2.0.5.6(2020-04-20)
+  - [general] fix a null exception in TExpression.searchColumn() method.
+
++ GSP Java version 2.0.5.5(2020-04-17)
+  - [MySQL] parser error with qualified identifiers that begin with a number
+  - [SQL Server] fix a bug `match` can't be used as table alias.
+
++ GSP Java version 2.0.5.4(2020-04-13)
+  - [Hive] support subQuery in where clause.
+
++ GSP Java version 2.0.5.3(2020-04-10)
+  - [Teradata] current_timestamp,current_time,current_date recognized as function name correctly.
+  - [Teradata] support comment on [table], but table keyword is omitted.
+  - [Teradata] able to pickup while statement inside procedure.
+  - [API] use TWhileStmt instead of TMySQLWhileStmt
+  - [API] rename public class TDb2WhileStmt to TWhileStmt, and move to package gudusoft.gsqlparser.stmt;
+  - [netezza] add support for OWNER TO clause of alter table.
+
++ GSP Java version 2.0.5.3(2020-04-09)
+  - [PostgreSQL] fix null exception when parsing create function with empty body.
+
+ 
++ GSP Java version 2.0.5.3(2020-04-08)
+  - [PostgreSQL] fix a null exception when parsing TABLE ONLY ( DATA ) clause.
+  - [PostgreSQL] fix a null exception when processing deferrable constraint attr in alter table statement.
+  - [MySQL] fix a null exception when the body of create trigger statement is empty.
+  - [SQL Server] able to pickup create database statement in if statement.
+  - [SQL Server] ERROR keyword can be used as column name.
+
++ GSP Java version 2.0.5.3(2020-04-07)
+  - [SQL Server] support BEGIN TRY/BEGIN CATCH used in if statement.
+  - [SQL Server] support FAST_FORWARD LOCAL option in CURSOR ... FOR.
+  - [Sybase] support partition by hash clause in into clause.
+  
++ GSP Java version 2.0.5.2(2020-04-03)
+ - [all databases] lexer performance improvement.
+
++ GSP Java version 2.0.5.2(2020-04-02)
+  - [PostgerSQL] fix a bug can't process time without time zone in create table statement.
+  - [Teradata] able to pickup column in CSUM function.
+ 
++ GSP Java version 2.0.5.2(2020-04-01)
+  - [DB2] support rename column in alter table statement.
+  - [SQL Server] support openjson table function.
+		
++ GSP Java version 2.0.5.2(2020-03-31)
+  - [SQL Server] support  SET NOCOUNT, ANSI_PADDING ON;
+  - [SQL Server] support for json auto/path clause.
+  - [SQL Server] support match function.
+ 
++ GSP Java version 2.0.5.1(2020-03-25)
+  - [SQLEnv] able to pickup metadata from create table/view/proceudre/function statement during parsing and save to SQLEnv. 
+
++ GSP Java version 2.0.5.0(2020-03-20)
+  - [general] keywordLoader.java: race condition during startup can trigger subsequent parser error
+  - [MySQL] able to parse timestamp when it use as a column name.
+  - [PostgerSQL] support show search_path.  
+  - [MySQL] fix a bug can't parse set password when user name is quoted. 
+  - [MySQL/API] support show create schema.
+  - [MySQL/API] add new class TMySQLShowStmt to represents the show statement. 
+  - [MySQL] able to recognize load data statement.
+  - [SQL Server] support on all server clause of create trigger.
+  - [SQL Server] support references to member methods via :: 
+  
++ GSP Java version 2.0.4.9(2020-03-19)
+  - [SQL Server] support COLUMN_SET FOR ALL_SPARSE_COLUMNS clause in column definition.
+  - [SQL SERVER] support writetext inside stored procedure.
+  - [SQL SERVER] support create event session statement.
+  - [SQL Server] Able to recoginze drop event session statement.
+  - [PostgreSQL] support default expression after null clause in column definition.
+
+	
++ GSP Java version 2.0.4.8(2020-03-18)
+  - [PostgreSQL] fix a bug can't process select statement when into clause is put after where clause.
+  - [DB2] fix a bug can't handle statement after proceudure if while/do clause inside procedure.
+  - [DB2] support TRUSTED and NOT TRUSTED CHECK constraints.
+  - [DB2] support as-row-change-timestamp-clause.
+  - [DB2] support collect detailed statistics clause in create index statement.
+  - [Oracle] able to parse json_table clause.
+  - [DB2] fix a bug can't handle CURRENT keyword used as table alias.
+  
+
++ GSP Java version 2.0.4.8(2020-03-17)
+  - [SQLEnv/API] TSQLEnv.getCurrentSchemaName() renamed to getDefaultSchemaName(), TSQLEnv.getCurrentCatalogName() renamed to getDefaultCatalogName(), 
+  - [SQLEnv/API] able to add and search function in TSQLEnv.
+  - [gettablecolumn] Doesn't list table-valued function in the output of the getTableColumn demo.
+  
++ GSP Java version 2.0.4.8(2020-03-16)
+  - [API/SQLServer] add new enum EFunctionReturnsType { frtScalar,frtInlineTableValue,frtMultiStatementTableValue} to represent the return type of function.
+
+  
++ GSP Java version 2.0.4.7(2020-03-13)
+  - [Teradata] fix a bug treat column in the implict date cast as table name.
+  - [Hive/general] TGSqlParser.parseObjectName() method will return a new TObjectName object even parse a string constnat.
+ 
++ GSP Java version 2.0.4.6(2020-03-11)
+  - [SQL Server] able to get the first dropped column name in TAlterTableOption.getColumnName() which can be only fetched from TAlterTableOption.getColumnNameList() in the previous version.
+  - [Oracle] fix a nullexception when parse day to second clause in expression.
+  - [Hive] fix a bug can't handle table qualified with the database name.
+  
++ GSP Java version 2.0.4.6(2020-03-10)
+  - [redshift] fix a bug ASC and DESC (in the order by clause) are dropped for toScript().
+  - [Hive/scriptWriter] fix a nullexception when process limit clause of hive.
+  - [Hive] support subquery used in create view statement.
+  - [Teradata] support repeat, close and commit statement inside create procedure.
+  - [API] TMySQLRepeatStmt and TDb2RepeatStmt replaced by TRepeatStmt
+  - [PostgreSQL] fix a bug can't process create function with the body is start with comment.
+
+  
++ GSP Java version 2.0.4.5(2020-03-09)
+  - [general] process of * column in select list is more accurate.
+	
++ GSP Java version 2.0.4.5(2020-03-05)
+  - [DB2] support truncate table statement.
+
++ GSP Java version 2.0.4.5(2020-03-03)
+  - [MySQL] fix a bug can't handle current row in over clause.
+  - [MySQL] support natural inner join syntax.
+  - [API] add new method TSelectSqlStatement.getHint() to replace  TSelectSqlStatement.getOracleHint()
+  - [MySQL] support hint in select statement.
+
++ GSP Java version 2.0.4.5(2020-02-29)
+  - [sql server] support create index statement without specify a column list of the target table.
+  - [sql server] fix a bug can't parse if exists in drop index statement.
+  - [sql server] support odbc escape syntax in like condition.
+  
++ GSP Java version 2.0.4.5(2020-02-27)
+  - [sql server] able fully parse query inside openquery clause.
+  - [general] TTable.getName() returns value from getTableName() if original tableName is null
+  - [demo] use TGSqlParser.getDBVendorByName() method in demos to get dbvendor value.
+
+  
++ GSP Java version 2.0.4.4(2020-02-25)
+  - [vertica] function properties file update.
+
++ GSP Java version 2.0.4.3(2020-02-19)
+  - [general] support bigquery/couchbase/hana/vertica built-in function and keyword checking.
+
++ GSP Java version 2.0.4.3(2020-02-18)
+  - [MySQL] fix a bug can't process builtin function used as column.
+  - [demo/dataflow] support table rename and swap relation in the dataflow.
+  
++ GSP Java version 2.0.4.2(2020-02-15)
+  - [general] thread safe improvement for loading function and keyword list.
+  - [general/performance] performance improvement when there are lots of CTE used in statement.
+
++ GSP Java version 2.0.4.1(2020-02-12)
+  - [API] introduce new static method:  public static EDbVendor TGSqlParser.getDBVendorByName(String dbVendorName)
+  - [bigquery] support saft_cast function.
+
++ GSP Java version 2.0.4.1(2020-02-10)
+  - [demo/dataflowanalyzer] fix a null exception when into clause put before select list.
+
++ GSP Java version 2.0.4.1(2020-02-09)
+  - [redshift] fix a bug can't parse create procedure/function when LANGUAGE clause is put before the function body.
+
++ GSP Java version 2.0.4.0(2020-02-08)
+  - [DB2] support Empty RESIGNAL.
+  - [DB2] support empty body in IF statement.
+
++ GSP Java version 2.0.4.0(2020-02-06)
+  - [MySQL] support optional foreign key name in add clause of alter table statement.
+  - [snowflake] fix a bug inner join having ON clause is not getting parsed.
+  - [DB2] support runstats statement.
+  - [DB2] support create tablespace statement.
+  - [DB2] support set maxvalue in alter column clause of alter table.
+  - [DB2] support isolation clase in merge statement.
+  - [DB2] support comment on procedure with parameter.
+  
++ GSP Java version 2.0.4.0(2020-02-05)
+  - [MySQL] support CTE in update statement.
+  - [SQL SERVER] fix a bug can't get database name from "CREATE DATABASE xml"
+  - [PostgreSQL] fix Parser error for SELECT EXISTS
+  - [MySQL] fix parser error for 'double precision' data type
+  - [SQL Server] fix parse error when using bind value for number of rows in 'SELECT TOP'.  
+  - [MySQL] fix parser error for null encoded as \N
+  - [PostgreSQL] support drop schema statement.
+  - [PostgreSQL] support create schema statement.
+
+  
++ GSP Java version 2.0.3.9(2020-02-03)
+  - [redshift] support syntax that put into clause before select list.
+  - [PostgreSQL] coordinates of tokens in postgresql create procedure set correctly.
+  - [PostgreSQL] fix a bug treat positional parameter as column.
+  - [demo/getTableColumn] able to get table from statment inside creatFunction.
+  - [Teradata] create function ignore language clause after return datatype clause.
+
+  
++ GSP Java version 2.0.3.8(2020-02-03)
+  - [Teradata] qualify clause can be parsed correctly when placed after select list.
+
++ GSP Java version 2.0.3.8(2020-02-02)
+  - [Teradata] support case_n expression in PARTITION BY clause of create table.
+  
++ GSP Java version 2.0.3.8(2020-01-27)
+  - [snowflake] support inner join without join condition.
+  - [greenplum] able to parse all statements inside create function body.
+
++ GSP Java version 2.0.3.7(2020-01-23)
+  - [SQL Server] support create external data source statement.
+  - [DB2] support create procedure without parameters.
+  - [Oracle] support / operator in using clause of execute statement.
+  - [general] coordinates of tokens in postgresql function set correctly.
+  - [netezaa] fix a bug can't handle identifier like: $$DB_KM_SUPPORT..NZ_TABLE2
+
+  
++ GSP Java version 2.0.3.6(2020-01-22)
+  - [gettablecolumns/postgresql] able to recognize function parameter used in the body.
+
++ GSP Java version 2.0.3.6(2020-01-19)
+  - [general] fix null exception when table type is not a regular table.
+  - [DB2] support column with empty default.
+  - [DB2] support comment on multiple columns.
+  - [DB2] support comment on procedure
+  - [DB2] support create role.
+	
++ GSP Java version 2.0.3.6(2020-01-17)
+  - [Teradata] ignore all function options after return type.
+  - [Teradata] support when condition in for each row/statement clause of create trigger.
+  - [Teradata] fix a bug can't handle column list in update clause of create trigger.
+  - [snowflake] support multi-column in add column clause of alter table statement.\
+
++ GSP Java version 2.0.3.5(2020-01-10)
+  - [redshift] support create procedure statement.
+  - [redshift] support create function statement.
+
+  
++ GSP Java version 2.0.3.4(2020-01-09)
+  - [snowflake] support create procedure statement.
+  - [snowflake] able to pickup statement in the body of create function statement.
+
++ GSP Java version 2.0.3.4(2020-01-08)
+  - [API] Add new class TRoutine which is the base class of TCreateProcedureStmt and TCreateFunctionStmt
+  - [API] move ECreateFunctionOptionType from gudusoft.gsqlparser.nodes.postgresql to gudusoft.gsqlparser.nodes
+  - [API] move TCreateFunctionOption from gudusoft.gsqlparser.nodes.postgresql to gudusoft.gsqlparser.nodes
+
++ GSP Java version 2.0.3.3(2020-01-08)
+  - [scriptWriter] fix a bug when rewrite sql server proprietary column alias 
+  - [SQL Server] fix nullexception in getTableName() while processing opendatasource clause.
+
++ GSP Java version 2.0.3.3(2020-01-07)
+  - [PostgreSQL] support syntax like:  AS 'obj_file', 'link_symbol' in create procedure statement.
+  - [SQL Server] able to get column alias of SQL Server proprietary column alias syntax like this: aliasName = column
+
+
++ GSP Java version 2.0.3.3(2020-01-06)
+  - [Oracle] support containers clause.
+  - [redshift] support character varying in type cast.
+  - [Hive] fix a bug can't parse insert values clause in merge statement.
+
++ GSP Java version 2.0.3.3(2020-01-03)
+  - [Teradata] FROM, WHERE, GROUP BY, HAVING, and ORDER BY. Teradata Database does not enforce this ordering, GSP support the Teradata ordering now.
+
++ GSP Java version 2.0.3.3(2020-01-02)
+  - [Hive] support subquery in join.
+  - [snowflake] support comment on table constraint.
+
++ GSP Java version 2.0.3.3(2019-12-31)
+  - [Hive] support delete statement.
+
+  
++ GSP Java version 2.0.3.2(2019-12-30)
+  - [Hive] support merge, update statement.
+  
++ GSP Java version 2.0.3.1(2019-12-23)
+  - [SQLEnv] Use TSQLEnv instead of IMetaDatabase to provide the metadata to sqlparser.
+    use setSqlEnv(TSQLEnv sqlEnv) instead of setMetaDatabase(IMetaDatabase metaDatabase)
+
++ GSP Java version 2.0.3.1(2019-12-18)
+  - [SQLEnv] Introduce a new clas TSQLEnv which can be used as a framework to load metadata from database instance, 
+  json file, any other resource by override the initSQLEnv() method.
+
+
++ GSP Java version 2.0.3.0(2019-12-10)
+  - [sqlflow] fix a bug can't match variable name due to case sensitive.
+  - [DB2] support empty body of create procedure.
+  - [SQL Server] fix a bug raise type cast error when parsing DDL Trigger(on database)
+  - [SQL Server] support column in drop constriant clause.
+  
++ GSP Java version 2.0.2.9(2019-12-06)
+  - [sqlflow] fix bug that treat variable name as table.
+  - [sqlflow] add function name in the relationship which means the relationship is linked with a function.
+  - [redshift] support IAM_ROLE, ACCESS_KEY_ID and SECRET_ACCESS_KEY parameters in Authorization Parameters.
+
++ GSP Java version 2.0.2.9(2019-12-02)
+  - [Teradata] fix a bug can't parse negative number in compress clause in column definition.
+  - [Teradata] fix cast error of gudusoft.gsqlparser.nodes.teradata.TTeradataStmtStubSqlNode
+
++ GSP Java version 2.0.2.8(2019-11-28)
+  - [SQL Server] Keyword(ABSOLUTE ,FIRST ,DATE ,GLOBAL ,INPUT ,INTERVAL) used as column can be picked up correctly.
+
++ GSP Java version 2.0.2.8(2019-11-25)
+  - [general] A variable in the INTO clause is represented by TObjectName, dbObjectType is set to EDbObjectType.variable.
+  - [snowflake] support rename column in alter table.
+  - [snowflake] support grant .. to all tables in schema to public
+  - [snowflake] support comment in column definition.
+  - [snowflake] support where clause after recluster in alter table statement.
+
++ GSP Java version 2.0.2.7(2019-11-22)
+  - [MySQL] support double quote string in GROUP_CONCAT after SEPARATOR.
+  - [PostgreSQL] support drop table statement in create function.
+
++ GSP Java version 2.0.2.7(2019-11-18)
+  - [snowflake] support comment in column list of create view statement.
+  
+
++ GSP Java version 2.0.2.7(2019-11-12)
+  - [redshift] fully support trim function.
+  
++ GSP Java version 2.0.2.7(2019-11-11)
+  - [general/all databases] performance improvement by change data structure of keywordValueList, keywordTypeList in lexer.
+
++ GSP Java version 2.0.2.7(2019-11-08)
+  - [teradata] support get diagnostics statement.
+
++ GSP Java version 2.0.2.7(2019-11-07)
+  - [Teradata] able to pickup qualify clause after group by caluse.
+
++ GSP Java version 2.0.2.6(2019-11-05)
+  - [MySQL] support window function.
+
++ GSP Java version 2.0.2.6(2019-11-04)
+  - [snowflake] support linear in cluster by clause.
+  - [snowflake] support create temp table syntax.
+  - [snowflake] The join conditions are optional in JOIN, also known as a CROSS JOIN.
+  - [PostgreSQL/GetTableColumn] able to get table/column from SQL inside create function.
+  
++ GSP Java version 2.0.2.6(2019-11-02)
+  - [PostgreSQL] fully support create procedure statement, represented by TCreateProcedureStmt.
+  - [MySQL/SQL Server/Oracle/PostgreSQL] able to pick up VALUE keyword when used as a column.
+
++ GSP Java version 2.0.2.6(2019-10-31)
+  - [Oracle] able to separate create table and other statements even if no semicolon is used after create table.
+  
++ GSP Java version 2.0.2.5(2019-10-29)
+  - [MySQL] bug fix in sql lock of select statement.
+  - [MySQL] support CTE introduced in MySQL8.0
+
+  
++ GSP Java version 2.0.2.5(2019-10-28)
+  - [MySQL] support join specification in cross join.
+  - [MySQL] support delete modifiers LOW_PRIORITY QUICK IGNORE
+  - [MySQL] support partition clause of from table in select/delete/insert/update.
+  
++ GSP Java version 2.0.2.5(2019-10-24)
+  - [DB2] support limit clause.
+  - [snowflake] support line comment start with //
+  - [snowflake] support cluster by clause used before column definition in create table statement.
+  - [snowflake] support AUTOINCREMENT clause in column definition.
+  - [snowflake] DECIMAL , NUMERIC, Synonymous with NUMBER, except that precision and scale cannot be specified (i.e. always defaults to NUMBER(38, 0)).
+  - [snowflake] support grant ... to role public
+
++ GSP Java version 2.0.2.4(2019-10-22)
+  - [snowflake] extract function using comma instead of FROM keyword in argument list.
+  - [snowflake] support pivot/unpivot clause.
+  
++ GSP Java version 2.0.2.4(2019-10-21)
+  - [snowflake] support nested CTEs
+  - [snowflake] support create transient table
+  - [snowflake] support MAX_SIZE in recluster clause of alter table.
+  - [snowflake] support call statement.
+  - [snowflake] support flatten table function.
+  - [snowflake] support minus operator.
+  - [snowflake] fix a bug can't parse trim function when use comma instead of FROM keyword.
+  - [snowflake] support try_cast function.
+  - [snowflake] support in condition in select list.
+  - [snowflake] support grant on table .. to public
+  - [snowflake] AT keyword can be used as table alias.
+  - [snowflake] support position('foo',a)
+
+  
++ GSP Java version 2.0.2.4(2019-10-18)
+  - [DB2] DAYS interval keyword after subQuery expression is supported.
+  - [DB2] support TRIM(BOTH from OBJECT_TYPE)
+  - [DB2] support FOR FETCH ONLY WITH UR clause.
+
+  
++ GSP Java version 2.0.2.4(2019-10-17)
+  - [general] Character encoding zero causes lexer to abort prematurely
+  - [PostgreSQL] escaped quotes in string literals in function bodies are not handled properly
+  - [general] fastSetString performance optimization
+
++ GSP Java version 2.0.2.4(2019-10-16)	 
+  - [general] fix bug Character encoding zero causes lexer to abort prematurely.
+  - [MySQL] support length of CURRENT_TIMESTAMP.
+  - [MySQL] support index type after KEY/PRIMARY KEY/UNIQUE KEY clause.
+  - [PostgreSQL] support time with/without time zone datatype.
+  - [MySQL] fix a bug can't parse identifier name used in  SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci
+
++ GSP Java version 2.0.2.4(2019-10-15)
+  - [MySQL] fix a bug can't parse CHAR CHARSET utf8.
+  - [MySQL] fix a bug lexer can't tokenize DEFINER=root@`%` correctly.
+  - [MySQL] support set delimiter //
+  - [MySQL] support empty block in create procedure.
+
+  
++ GSP Java version 2.0.2.4(2019-10-14)
+  - [general] table.EffectType set to tetAlter in alter table statement.
+  - [SQL Server/GetTableColumn] year/month/day/hour/minute/second keyword used as a column name can be picked up correctly.
+  - [sql server] fix a bug can't recoginze if statement after drop table statement.
+  
++ GSP Java version 2.0.2.3(2019-10-10)
+  - [lexer] fix a bug can't handle ?-- character of DB2/SQLServer/MySQL/PostgreSQL
+
++ GSP Java version 2.0.2.3(2019-10-08)
+  - [getTableColumn] able to recoginze * as column in bigquery/couchbase/informix/mysql/odbc/openedge/sybase/SQL Server script.
+
++ GSP Java version 2.0.2.2(2019-10-06)
+  - [PostgreSQL] support table alias of insert statement.
+  - [PostgreSQL] support on conflict clause in insert statement.
+  - [Hana] support upsert/replace statement.
+  - [API] move TUpsertStmt from gudusoft.gsqlparser.stmt.couchbase to gudusoft.gsqlparser.stmt
+  - [PostgreSQL] support reindex statement.
+  - [PostgreSQL] support vacuum statement.
+  
++ GSP Java version 2.0.2.1(2019-10-01)
+  - [Hive] fix a bug can't parse order by clause after union all operator.
+  - [Hive] support union all set operator
+
++ GSP Java version 2.0.2.1(2019-09-30)
+  - [sqlserver] support add ADD PERSISTED in alter column.
+  - [redshift] able to handle square bracket used in identifier.
+  - [API] move TXMLPassingClause from gudusoft.gsqlparser.nodes.oracle to gudusoft.gsqlparser.nodes
+  - [API] move TXMLAttributesClause from gudusoft.gsqlparser.nodes.oracle to gudusoft.gsqlparser.nodes
+  - [DB2] support xmlelement/xmlcast/xmlquery/xmlserialize function and able to get column name used in the function.
+
++ GSP Java version 2.0.2.1(2019-09-29)
+  - [snowflake] support numeric datatype without specify precision and scale
+  - [snowflake] support create temporary table.
+  - [snowflake] support VARIANT using : syntax after using get() command.
+	
++ GSP Java version 2.0.2.1(2019-09-27)
+  - [postgresql] function body in LANGUAGE plpython3u will be ignore instead of report a syntax error.
+
++ GSP Java version 2.0.2.1(2019-09-24)
+  - [posgresql] support parallel safe keyword in create function.
+  - [posgresql] support create table statement inside create function.
+  - [mdx] support ampersand symbol in MDX query
+	
+
++ GSP Java version 2.0.2.1(2019-09-23)
+  - [mdx] support use HAVING to Filter an Axis
+  - [mdx] support not keyword.
+  - [redshift] support listagg function.
+
++ GSP Java version 2.0.2.0(2019-09-18)
+  - [scriptWriter/MySQL] support json datatype in cast function.
+  - [scriptWriter/MySQL] support select modifier SQL_CALC_FOUND_ROWS.
+  - [snowflake] support RIGHT/LEFT/CURRENT_TIMESTAMP() function.
+		
+
++ GSP Java version 2.0.2.0(2019-09-17)
+  - [general] all keywords and function name properties file relocated to src\main\resources\gudusoft\gsqlparser\util
+  - [general] all lexer/parser table file relocate to src\main\resources\gudusoft\gsqlparser\parser\, no need to recreate table file for a release.
+
++ GSP Java version 2.0.1.0(2019-08-06)
+  - [API] TDb2CreateTrigger is replaced by TCreateTriggerStmt 
+
++ GSP Java version 2.0.1.0(2019-08-01)
+  - [API] Replace TMssqlCreateTrigger with TCreateTriggerStmt to represent create trigger statement of SQL Server and Sybase.
+  
++ GSP Java version 2.0.1.0(2019-08-01)
+  - [Teradata] able to get open statement inside procedure.
+  - [Teradata] able to get declare statement inside procedure.
+  - [Teradata] support pivot operator in from clause.
+  - [TPLY] fix precedence table overflow error.
+
++ GSP Java version 2.0.1.0(2019-07-29)
+  - [API] new class TDmlEventItem represents: Create trigger dml event: delete, insert, update [of columns]
+  - [API] add new enum ETriggerActionTime
+  - [API] add new class TTriggerEventItemw hich is super class of : TDmlEventItem, TDdlEventItem and TDatabaseEventItem
+  - [API] add new class TTriggerEventClause which is super class of : TDmlEventClause,TDdlEventClause and TDatabaseEventClause
+  - [API] add new class TTriggeringClause which is super class of TSimpleDmlTriggerClause,TCompoundDmlTriggerClause and TNonDmlTriggerClause
+  
+
++ GSP Java version 2.0.1.0(2019-07-25)
+  - [PostgreSQL] fix no root node error when parse create table of typename statement.
+  - [PostgreSQL] fix a nullexception when parse collate clause.
+  - [PostgreSQL] support GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( sequence_options ) ]
+  
+  
++ GSP Java version 2.0.1.0(2019-07-25)
+  - [general/snowflake] fix a nullexception when parse rename table clause in alter table.
+				
++ GSP Java version 2.0.0.9(2019-07-15)
+  - [MySQL/ODBC] ecognizes date and time ODBC syntax like { d 'str' }
+
++ GSP Java version 2.0.0.9(2019-07-11)
+  - [snowflake] able to recognize the VARIANT column name syntax like: <column>:<level1_element>.
+  
++ GSP Java version 2.0.0.9(2019-07-09)
+  - [scriptWriter] support interval unit in MySQL TIMESTAMPDIFF and TIMESTAMPADD function.
+  - [Snowflake] Return null function expression in the resultColumn of select list.
+  - [API/MySQL/BigQuery] add TFunctionCall.getIntervalUnit() method,able to fetch interval unit of TIMESTAMPDIFF and TIMESTAMPADD function.
+
++ GSP Java version 2.0.0.8(2019-07-03)
+  - [MySQL] fix a bug can't detect true/false keyword used in where condition.
+
++ GSP Java version 2.0.0.7(2019-06-28)
+  - [MySQL] Able to detect syntax error while using reserved keywords as column name.
+  - [scriptWriter] fix bug of toScript() doesn't work correctly for adddate() function and := operator in select list.
+
++ GSP Java version 2.0.0.6(2019-06-16)
+  - [PostgreSQL] fix a bug can't detect asc/desc keyword in orer by clause.
+  - [DB2] FROM keyword is optional in delete statement.
+  - [DB2] support SUBSTRING(SLCP_MVE_TLGR_CTNT, 1, 80)
+
++ GSP Java version 2.0.0.6(2019-06-03)
+  - [general] fix a bug input sql file locked after parsing.
+
++ GSP Java version 2.0.0.6(2019-06-02)
+  - [DB2] support Lateral derived tables
+
++ GSP Java version 2.0.0.5(2019-05-31)
+  - [scriptWriter] support MySQL on duplicate key update clause
+  - [scriptWriter] support MySQL joins used in update statement.
+  - [API,MySQL] pickup FROM keyword in delete statement correctly.
+  
++ GSP Java version 2.0.0.5(2019-05-30)
+  - [couchbase,getTableColumn] able to get table column relation from couchbase merge statement.
+
++ GSP Java version 2.0.0.5(2019-05-28)
+  - [snowflake] keyword time can be used as column name.
+  - [snowflake] fix a bug can't recognize CREATE OR REPLACE TRANSIENT TABLE statement.
+  - [snowflake] support ignore/respect nulls clause in window function.
+  - [snowflake] support LATERAL FLATTEN clause in from clause.
+  - [API] TGsqlParser.isvalidsqlpluscmd(String astr) replaced by TSqlplusCmdStatement.searchCmd(String cmdStr)
+  - [Oracle] fix a bug treat c as sqlplus command at the start of a newline.
+  - [Oracle] add new static method: TSqlplusCmdStatement.searchCmd(String cmdStr),ESqlPlusCmd searchCmd(String cmdStr, TSourceToken nextToken)
+  - [teradata] able to recognize check workload statement.
+
+  
++ GSP Java version 2.0.0.4(2019-05-27)
+  - [snowflake] support variant column like this: <column>:<level1_element>
+
++ GSP Java version 2.0.0.4(2019-05-23)
+  - [getTableColumn] Able to link columns in value clause of merge statement to the using table.
+  - [BigQuery] Able to treat TRUE/FALSE as constant correctly.
+
++ GSP Java version 2.0.0.4(2019-05-17)
+  - [redshift] support CTE in create view statement.
+
+	
++ GSP Java version 2.0.0.3(2019-05-15)
+  - [snowflake] support varchar datatype without specify a length.
+  - [snowflake] support cluster by clause in alter table.
+  - [snowflake] support CTE query in create table.
+  - [snowflake] support create sequence ... start 
+
++ GSP Java version 2.0.0.3(2019-05-15)
+  - [snowflake] support swap with clause in alter table.
+
+  
++ GSP Java version 2.0.0.3(2019-05-14)
+  - [Oracle] support timestamp constant in plsql.
+  - [Teradata] support GROUP BY () syntax.
+  - [Teradata] fix a bug can't parse create join index.
+  
++ GSP Java version 2.0.0.2(2019-05-13)
+  - [PostgreSQL] Support attach/detach partition clause in alter table.
+  - [PostgreSQL] Support set schema name in alter table.
+  - [PostgreSQL] Support no inherit clause in check constraint.
+  - [PostgreSQL] Support alter table rename constraint clause.
+  - [PostgreSQL] Support alter table rename column clause.
+  - [PostgreSQL] fix a bug can't parse set data type clause in alter table alter column clause.
+
+  
++ GSP Java version 2.0.0.2(2019-05-10)
+  - [snowflake] All elements of Unconditional multi-table insert and Conditional multi-table insert are available in the parse tree nodes.
+
++ GSP Java version 2.0.0.1(2019-05-06)
+  - [Google BigQuery] Fully support Google BigQuery¡¯s standard SQL. Create function is not supported.
+
++ GSP Java version 1.9.8.8(2019-05-04)
+  - [lexer] extend max_states from 600 to 900 to handle more rules in .l file.
+
++ GSP Java version 1.9.8.7(2019-04-29)
+  - [formatsql] fix a bug only having clause used in select statement.
+
++ GSP Java version 1.9.8.7(2019-04-26)
+  - [snowflake] support syntax like this: grant select on [TABLE] schema_name.table to [ROLE] public; 
+  
++ GSP Java version 1.9.8.7(2019-04-24)
+  - [openedge] support syntax: (column list) = (subquery) in set clause of update statement.
+  
+  
++ GSP Java version 1.9.8.7(2019-04-23)
+  - [MySQL] support LATERAL derived view.
+  - [snowflake] support RLIKE operator.
+  - [Hana] support WHEN [NOT] MATCHED AND condition THEN syntax.
+  - [Hana] support CTE query in insert statement.
+  - [snowflake] support rename to clause in alter table.
+  - [snowflake] support recluster option in alter table.
+
+  
++ GSP Java version 1.9.8.6(2019-04-08)
+  - [greenplum] support CTE in insert value clause.
+  - [greenplum] support CTE in common table expression
+  - [greenplum] support asc/desc in partition clause 
+  - [greenplum] support time without time zone syntax.
+  - [greenplum] support date function.
+  - [greenplum] support value clause in common table expressions.
+
++ GSP Java version 1.9.8.5(2019-03-21)
+  - [Teradata] fix a bug can't parse syntax like this: INTERVAL '421' MINUTE(DATE)
+
+  
++ GSP Java version 1.9.8.5(2019-03-21)
+  - [getTableColumn] fix a bug can't link columns in values clause of Oracle insert all statement.
+
++ GSP Java version 1.9.8.4(2019-03-11)
+  - [PostgreSQL] support bind variable.
+
++ GSP Java version 1.9.8.3(2019-03-07)
+  - [impala] keyword and built-in function checker support. 
+  - [snowflake] keyword and built-in function checker support.
+  
++ GSP Java version 1.9.8.2(2019-03-01)
+  - [Teradata] fix a bug can't parse simple expression used in OVERLAPS operator.
+		
++ GSP Java version 1.9.8.2(2019-02-28)
+  - [PostgreSQL] Able to handle symbol '?' in where condition.
+
++ GSP Java version 1.9.8.1(2019-02-19)
+  - [Teradata] support order by and with load clause in create index statement.
+  - [Teradata] support alter table to current.
+  - [Teradata] support drop temporary table.
+  - [Teradata] support drop table with ALL keyword.
+  - [Teradata] support drop error table syntax.
+  - [API] TCommentOnSqlStmt becomes the descendant class of TCustomSqlStatement instead of TCustomOracleSqlStmt
+
+  
++ GSP Java version 1.9.8.1(2019-02-13)
+  - [SQL Sever] support create cluster columnstore index statement.
+  
++ GSP Java version 1.9.8.0(2019-02-13)
+  - [MDX/XML schema] improvement xml schema to support mdx select statement and other elements such identifer/function and etc.
+
++ GSP Java version 1.9.8.0(2019-02-06)
+  - [MDX] support variable in function call.
+  - [MDX] support VBA!round function.	
+  
++ GSP Java version 1.9.8.0(2019-02-03)
+  - [API] TMdxAxisNode.getName_OR_Number() replaced by TMdxAxisNode.getAxis()
+
++ GSP Java version 1.9.7.8(2019-02-01)
+  - [Hive] support temporary keyword in create table statement.
+  
++ GSP Java version 1.9.7.8(2019-01-31)
+  - [SQL Server] support table index in create table statement.
+			
++ GSP Java version 1.9.7.8(2019-01-30)
+  - [Oracle] support UNRECOVERABLE in create table statement.
+  - [Oracle] fix a bug can't get quoted SQL from execute immediate statement.
+
+  
++ GSP Java version 1.9.7.7(2019-01-29)
+  - [MySQL] support table prefix in alter table add primary key clause.
+  -[Oracle] able to recognize CREATE OR REPLACE CONTEXT statement.
+
++ GSP Java version 1.9.7.7(2019-01-28)
+  - [Oracle] support case expression in using clause of execute immediate statement.
+  - [Oracle] support multiset union all in plsql expression.
+  - [Oracle] support IS A SET operator in plsql code.
+  - [general] fix a "Object reference not set to an instance of an object" bug when parsing set Content.write( substring(@Content, 1, @Length), @DataIndex, @Length ) clause in update statement.
+  - [API] add new static methods: TGSqlParser.parseExpression,parseFunctionCall,parseObjectName,parseSubquery
+
+
++ GSP Java version 1.9.7.7(2019-01-25)
+  - [general] fix a null exception bug when get table name from FREETEXTTABLE/CONTAINSTABLE clause.
+
+  
++ GSP Java version 1.9.7.6(2019-01-24)
+  - [Oracle] support column_properties in materialized_view_props clause of CREATE MATERIALIZED VIEW statement.
+  - [DB2] fully support XMLTABLE function in from clause and able to get columns in XMLTABLE funciton.
+  
++ GSP Java version 1.9.7.6(2019-01-23)
+  - [Hana] fix a bug can't handle operator <= followed by ? directly.
+
++ GSP Java version 1.9.7.5(2019-01-11)
+  - [Teradata] fix a bug can't parse explict datatype conversion to DATE in using clause.
+  - [Teradata] support as deferred/locator clause in using clause.
+  - [Teradata] fix a bug can't support explict datatype conversion in exec parameters.
+
+
++ GSP Java version 1.9.7.4(2019-01-10)
+  - [Teradata] fix a bug lexer can't work for LastInvoiceDate >= date -? correctly if there is no space between - and ?
+  
++ GSP Java version 1.9.7.4(2019-01-09)
+  - [API] add new method: TAlterIndexStmt.getTableName()
+
++ GSP Java version 1.9.7.3(2019-01-07)
+  - [Javadoc] enhanced document for TAlterTableOption
+
++ GSP Java version 1.9.7.3(2019-01-04)
+  - [API] change enum AlterColumnSetDefault,AlterColumnDropDefault,AlterColumnDropNotNull,
+    AlterColumnSetNotNull, AlterColumnSetStatistics,AlterColumnSetOptions,AlterColumnResetOptions, AlterColumnSetStorage,AlterColumnSetDataType,
+   to  AlterColumn, with AlterColumnSubType set to  SetDefault,DropDefault,DropNotNull,SetNotNull,SetStatistics,SetOptions,ResetOptions,SetStorage,SetDataType,
+  - [API] add new enum EAlterColumnSubType, subtype of alter column in alter table statement.
+  - [general] use  TAlterTableOption.init to set column name in alter column clause of alter table statement instead of setColumnName()
+  - [general] if TAlterTableOption.getOptionType() = EAlterTableOptionType.AddColumn, getColumnDefinitionList() will return all new added columns.
+  - [Javadoc] enhanced document for delete, insert, merge, udpate, create table, alter table, alter database.
+
+  
++ GSP Java version 1.9.7.2(2019-01-02)
+  - [API] new class TXmlTableParameter, TXMLPassingClause, 
+  - [Oracle] fully support XMLTABLE function in from clause and able to get columns in XMLTABLE funciton.
+  
+
++ GSP Java version 1.9.7.2(2018-12-26)
+  - [API] TUpdateSqlStatement.getReferenceJoins() replaced by TUpdateSqlStatement.joins
+  - [API] TDeleteSqlStatement.getReferenceJoins set to from clause in delete statement correctly.
+  
++ GSP Java version 1.9.7.1(2018-12-19)
+  - [API] add new method: TCommonBlock.getEndlabelName(), TCreateProcedureStmt.getEndlabelName(), TCreateFunctionStmt.getEndlabelName(), TPlsqlCreatePackage.getEndlabelName()
+  - [Oracle] labelName and endLabelName set correctly.
+			
++ GSP Java version 1.9.7.1(2018-12-18)
+  - [MDX] fix a cast exception in TMdxPropertyNode.init method.
+  - [DB2] support listagg function.
+
+  
++ GSP Java version 1.9.7.1(2018-12-13)
+  - [SQL Server] support Addition Assignment in set clause of udpate statement.
+  - [PostgreSQL] support grouping sets clause in group by clause.
+  - [general] add a new static variable: TBaseType.LEXER_INIT_MAX_MATCHES which will be used when TCustomLexer.max_matches is initialized.
+     user can set a small value of TBaseType.LEXER_INIT_MAX_MATCHES such as 10240 if they need a small memory usage of the parser instance
+	 before creating an object of the parser.
+  - [Oracle] fix a bug can't parse condition in for loop when this condition with parenthesis.
+  - [general] fix a null exception when call TTable.getTableName().getTableString() ,TTable.getTableName().getTableToken() of alter table rename to new tablename.
+
+  
++ GSP Java version 1.9.7.0(2018-12-10)
+  - [general] move source code demo and test to a new project.
+
++ GSP Java version 1.9.6.3(2018-12-05)
+  - [SQL formatter] keep comment at the begin of SQL.
+  - [API] enable visitor interface of TMySQLCreateTableOption
+
++ GSP Java version 1.9.6.2(2018-11-29)
+  - [SQL Server] support offset fetch in order by clause.
+
++ GSP Java version 1.9.6.2(2018-11-22)
+  - [Teradata] enhanced support for parameters in create macro.
+  - [Oracle] support of type under clause in create view statement.
+  - [DB2] support expression in the in condition without parenthesis.
+  - [DB2] able to fetch defualt value in column definition.
+
++ GSP Java version 1.9.6.2(2018-11-21)
+  - [Oracle] fix a bug can't get view alias in CREATE MATERIALIZED VIEW (this bug was introduced in v1.9.5.9)
+  - [SQL Server] support begin conversation timer in create procedure.
+  - [SQL Server] fix a bug can't handle VARIABLE in description of END CONVERSATION.
+  - [SQL Server] fix a bug can't handle the NEXT keyword used in the qualified name.
+  - [Oralce] support ? in the third parameter of translate function.
+  - [demo\toXML] able to output else clause in if statement.
+  - [Teradata] support into clause after where clause.
+
++ GSP Java version 1.9.6.1(2018-11-20)
+  - [Teradata] support NULL keyword in macro parameter declaration
+  - [Teradata] support syntax put WHERE clause before FROM in select statement.
+  - [demos\toXML] fix a bug can't generate XML output for parenthesesed join clause 
+		
++ GSP Java version 1.9.6.1(2018-11-19)
+  - [demo\dlineage] improve the performance of DataFlowAnalyzer while process stored procedure of SQL Server database.
+  
++ GSP Java version 1.9.6.0(2018-11-16)
+  - [Oracle] fix nullexception when parse statements inside create trigger timing point section.
+		
++ GSP Java version 1.9.5.9(2018-11-13)
+  - [API] add Oracle related enum: EMvRefreshType, EOracleBuildType, EOracleLoggingType, EOracleParallelType, 
+  - [API] add Oracle related new class: TMaterializedViewProps, TOracleBuildClause, TOracleCacheClause, TOracleCreateMvRefresh, TOracleCreateMvRefreshOption,
+			TOracleLoggingClause, TOracleParallelClause, TOracleUsingIndex, 
+			
++ GSP Java version 1.9.5.8(2018-11-12)
+  - [Sybase] support default values clause in insert statement.
+  
++ GSP Java version 1.9.5.8(2018-11-11)
+  - [Oracle] support parentheses expr in using clause of execute immediate statement.
+  - [Oracle] fix a bug can't parse Parameters keyword used in a qualified data type.
+  - [Oracle] fix a bug can't handle := operator is $$ follows it directly.
+  - [SQL Server] fix a NullPointerException when parse update statement including join clause in from clause.
+
++ GSP Java version 1.9.5.7(2018-11-09)
+  - [MySQL] support COLLATE clause after not null in create table statement.
+  
++ GSP Java version 1.9.5.7(2018-11-08)
+  - [Impala] support CTE.
+
++ GSP Java version 1.9.5.6(2018-10-24)
+  - [Teradata] fix a bug can't handle select statement start with ( at the begin of the SQL query.
+  - [Teradata] support create join index statement.
+  - [Teradata] support syntax that put a comma at the begin of a in expr.
+  
++ GSP Java version 1.9.5.5(2018-10-21)
+  - [Oracle] able to recognize and parser noneditionable trigger
+  - [Teradata] support at time zone clause of DATE datatype.
+  - [Teradata] support with return only clause in declare cursor statement.
+  - [SQL Server] support OBJECT:: in grant statement.
+  - [SQL Server] support xmlnamespaces clause used together with CTE.
+
++ GSP Java version 1.9.5.5(2018-10-19)
+  - [Teradata] fix a bug can't handle resignal statement with only RESIGNAL keyword.
+  - [Snowflake] fix a bug can't handle IDENTITY clause in create table statement.
+  - [Snowflake] fully support create view statement.
+  - [Netezza] support modify column in alter table statement.
+  - [Oracle] fix a bug can't handle with object IDENTIFIER in create view of object type.
+
++ GSP Java version 1.9.5.5(2018-10-18)
+  - [Netezza] support set privileges in alter table statement.
+  - [Netezza] support if exists clause in drop table statement.
+  
++ GSP Java version 1.9.5.4(2018-10-17)
+  - [SQL Server] Doesn't treat [DATE] as a regular column name.
+  - [demo/TTraceColumn] fix a out out memory bug when handling nested function call.
+  - [Teradata] IS keyword can be used as AS keyword in COMMENT ON TABLE.
+  - [SQL SERVER] support QUERYTRACEON query hint.
+  - [API] add new enum: EQueryHint.E_QUERY_HINT_QUERYTRACEON
+
++ GSP Java version 1.9.5.4(2018-10-16)
+  - [Teradata] support collect statistics with a single index column name.
+  - [Teradata] support qualify clause after group by clause.
+  - [Teradata] support script clause in from clause.
+  - [Teradata] able to recognize label statement.
+
++ GSP Java version 1.9.5.4(2018-10-15)
+  - [Teradata] support function call in index column of COLLECT STATS statement
+  - [Teradata] able to handle qualify clause between having and group by clause.
+  - [Teradata] fix a bug can't handle index column name in COLLECT STATS statement.
+  - [Teradata] support qualify clause after sample clause in select statement.
+  - [Teradata] support  percentile_cont and percentile_disc function.
+  - [Teradata] support hash by random clause in insert statement.
+  - [Hive] support over clause in case expression.
+  - [Hive] fix a bug can't handle ? in limit clause.
+
++ GSP Java version 1.9.5.4(2018-10-12)
+  - [Teradata] fix a bug can't handle $var used after DATE keyword.
+  - [Teradata] fix a bug can't parse range_n clause in create table definition clause.
+  - [Teradata] Able to recognize EXIT statement.
+  
+
++ GSP Java version 1.9.5.3(2018-10-08)
+  - [Hive] support NOT LIKE predicate.
+  - [Hive] fix a bug can't handle DIV operator.
+
+  
++ GSP Java version 1.9.5.2(2018-10-03)
+  - [Teradata] support where clause between group by and having clause in select statement.
+  - [Teradata] collectStatistics statement bug fix.
+  - [Teradata] support unique primary key clause in collectStatistics statement.
+  - [Teradata] support multiple sample clause in collectStatistics statement.
+  - [Teradata] support primary key clause before on in collectStatistics statement.
+  - [Teradata] fix a bug can't parse replace function.
+		
+
++ GSP Java version 1.9.5.2(2018-09-30)
+  - [API/Oracle] add new class TPhysicalAttributesClause, TPhysicalAttributesItem, TPhysicalProperties, TSegmentAttributesClause, TSegmentAttributesItem
+  - [API/Oracle] add new class TStorageClause to represent storage clause.
+
++ GSP Java version 1.9.5.2(2018-09-29)
+  - [API/Oracle] add new enum EFlashCacheType to flash cache.
+  - [API/Oracle] add new enum EBufferPoolType to buffer pool.
+  - [API/Oracle] add new class TSizeClause to represent size clause.
+  - [API/Oracle] add new enum EStorageType to represent storage item type.
+  - [API/Oracle] add new class TStorageItem to represent storage clause item.
+  - [API/Oracle] add new class TCreateMaterializedViewLogSqlStatement represents Oracle create materalized view log statement.
+  - [MySQL] able to pickup renamed table name in alter table rename to.
+  - [MySQL] link new add column to table in alte table change column.
+  - [demo/getTableColumn] Able to pickup table and column in create index statement.
+
++ GSP Java version 1.9.5.1(2018-09-27)
+  - [Netezza] support create database statement.
+  - [Netezza] support comment on statement.
+  - [Netezza] support lock table statement.
+
++ GSP Java version 1.9.5.1(2018-09-26)
+  - [API] rename EHiveLockMode to ELockMode
+  - [API] move EHiveLockMode from gudusoft.gsqlparser.nodes.hive to gudusoft.gsqlparser.nodes
+
+
++ GSP Java version 1.9.5.0(2018-09-18)
+  - [API] Able to get characterSet and collationName from TCreateDatabaseSqlStatement.
+  - [demo/toXML] support TIntoClause in xmlVisitor
+  
++ GSP Java version 1.9.4.9(2018-09-14)
+  - [Teradata] support TD_UNPIVOT Table Operators function.
+  
++ GSP Java version 1.9.4.8(2018-09-13)
+  - [Oracle] fix a bug can't detect public keyword in create synonmy statement.
+  - [Oracle] fix a bug can't parse alter index inside stored procedure and not ended with a semicolon
+
+
++ GSP Java version 1.9.4.7(2018-09-10)
+  - [demo/getTableColumn] Able to get column name in primary/unique key constraint clause of create table statement.
+  - [API] New method: TAlterTableOption.getReferencedTable() returns the referenced table in foreign key.
+  - [demo/getTableColumn] Able to get column name in add foreign key constraint clause of alter table statement.
+  - [demo/analyzescript, MySQL] fix a bug can't detect add primary key constraint clause of alter table statement 
+  - [demo/getTableColumn] Able to get column name in add primary key constraint clause of alter table statement.
+  - [demo/getTableColumn] Able to get column name in change column clause of alter table statement.
+  - [demo/getTableColumn] Able to get column name in drop column clause of alter table statement.
+  
++ GSP Java version 1.9.4.7(2018-09-10)
+  - [SQL Server] fix a null exception bug when process drop schema inside if statement.
+  - [SQL Server] fix a null exception bug when process drop database inside if statement.
+  
++ GSP Java version 1.9.4.6(2018-09-06)
+  - [SQL Server] support with option in drop constraint clause in alter table statement.
+  - [SQL Server] fully support alter index statement.
+  
++ GSP Java version 1.9.4.5(2018-08-31)
+  - [API] TFunctionCall.setExpr3 was replaced by setLengthExpression (substring function)
+  - [API] TFunctionCall.setExpr2 was replaced by setStartExpression (substring function)
+  - [API] TFunctionCall.setExpr1 was replaced by setDateExpression (extract function),setCastOperand (cast function)
+          setTypeExpression (DB2 subtype-treatment: treat), setSourceExpression (substring function),
+		  setColumnNameOrListExpression (SQL Server contains predicate)
+		  
++ GSP Java version 1.9.4.4(2018-08-30)
+  - [Javadoc] Finished doc comments for TGSqlParser
+
++ GSP Java version 1.9.4.4(2018-08-24)
+  - [Javadoc] Finished doc comments for TSourceToken, TParseTreeNode class.
+  
++ GSP Java version 1.9.4.4(2018-08-24)
+  - [Javadoc] Finished doc comments for TObjectName class.
+  
++ GSP Java version 1.9.4.4(2018-08-22)
+  - [API] Add new method TSourceToken TSourceToken.nextSolidToken(boolean treatCommentAsSolidToken)
+  - [API] Add new method TSourceToken TSourceToken.prevSolidToken(boolean treatCommentAsSolidToken)
+
++ GSP Java version 1.9.4.4(2018-08-20)
+  - [MySQL] support compressed keyword in alter table row_format clause.
+  - [MySQL] support show index statement
+  - [API] add new class TShowIndexStmt
+  
++ GSP Java version 1.9.4.3(2018-08-15)
+  - [Teradata] support COMPILE WITH NO SPL clause in alter procedure statement.
+  - [PostgreSQL] support rename table clause in alter table statement.
+  
++ GSP Java version 1.9.4.3(2018-08-13)
+  - [getTableColumn] fix a bug can't recognize the column derived from CTE.
+  
++ GSP Java version 1.9.4.2(2018-07-31)
+  - [Oracle] fix a bug can't parse plsql block not ended by a semicolon.
+  - [getTableColumn] link column in add/modify clause to table in alter table statement.
+ 
++ GSP Java version 1.9.4.2(2018-07-27)
+ - [API] add new method: TSourceToken.toScript()
+
++ GSP Java version 1.9.4.2(2018-07-26)
+ - [Teradata] Teradata Geometry datatype support 3 parts function.
+ - [Teradata] support syntax that using "," between no values in function parameters.
+ 
++ GSP Java version 1.9.4.1(2018-07-25)
+ - [Dlineage/demo] fix a bug source column is not shown correct when table name in from clause is with bracket
+
++ GSP Java version 1.9.4.1(2018-07-19)
+ - [Teradata] fix a bug can't parse || operator followed by a variable directly.
+
++ GSP Java version 1.9.4.1(2018-07-18)
+ - [API] TMssqlGrant replaced by TGrantStmt.
+ - [SQL Server] fully support create schema statement.
+ - [MySQL] fix a bug can't handle if not exists clause in create database statement.
+
++ GSP Java version 1.9.4.1(2018-07-17)
+ - [MySQL] Support a list of tables of rename table statement.
+
++ GSP Java version 1.9.4.1(2018-07-16)
+ - [scriptWriter] fix a bug can't handle group_concat() function correctly.
+
++ GSP Java version 1.9.4.0(2018-07-12)
+ - [scriptWriter] fix a bug can't toScript() not working for regexp operator.
+ 
++ GSP Java version 1.9.4.0(2018-07-09)
+ - [Teradata] support DYNAMIC RESULT SETS in create procedure statement.
+ - [Teradata] fix a bug that parser can't parse a where clause before the from clauses
+ - [Teradata] Able to parse sample clause before where clause.
+ - [Teradata] Locking Access parse error.
+ - [Teradata] Able to parse create trigger statement.
+ - [Teradata] support "order by" clause within the scope of an xmlagg function call.
+ - [Teradata] support unique keyword after select.
+
++ GSP Java version 1.9.4.0(2018-07-07)
+ - [Teradata] Two sets of brackets is causing the parser to fail.
+ - [API] add new classes related to execute_option: TExecuteOption, TResultSetsExecuteOption, TResultSetDefinition,TInlineResultSetDefinition,TSchemaObjectResultSetDefinition
+ - [SQL Server] support execute_option in execute statement.
+ - [DB2] support period clause in update statement.
+
+ 
++ GSP Java version 1.9.3.8(2018-07-03)
+ - [Teradata] fix null exception bug in WindowFrame clause. 
+ - [MySQL] Able to get default expression in alter table alter column clause.
+ - [MySQL] use TRenameStmt to represent rename table statment.
+ - [MySQL] fully support drop procedure statement.
+ - [SQL Server] use TDropProcedureStmt instead of TMssqlDropDbObject to represent drop procedure statement.
+			
++ GSP Java version 1.9.3.7(2018-06-15)
+ - [Teradata] support return...hash...local sequence in table clause.
+ - [Teradata] support upper function in the right side of IN condition.
+ - [Teradata] support AT clause in TIMESTAMP constant.
+ - [Oralce] fix a bug can't parse CREATE MATERIALIZED VIEW statement when STORE AS BASICFILE clause is used.
+ - [Oracle] support alter materalized view refresh clause.
+ - [Hana] support placeholder syntax in from table clause.
+
+ 
++ GSP Java version 1.9.3.6(2018-06-13)
+ - [Redshift] fix a bug that include limit clause in order by clause.
+ 	 
++ GSP Java version 1.9.3.6(2018-06-12)
+ - [API] add new method: TInformixOuterClause.getTableList()
+ - [PostgreSQL] fix a null exception bug when parse create table like statement.
+ - [DB2] support copy options in create table statement.
+ - [Informix] using TLimitClause to fetch skip clause, first max, limit max value in select list.
+ 
++ GSP Java version 1.9.3.5(2018-06-01)
+ - [XML\xsd] shipped sqlschema.xsd together with this libraty.
+ - [XML\xsd] add NOT keyword in generated xml for like, between predicate.
+ - [XML\xsd] support cte_list type in query_expression_type
+ - [general] fix a bug caused by set tableExpr in setTableonly() method.
+ 
++ GSP Java version 1.9.3.5(2018-05-31)
+ - [demo\toXML] improve sqlschema.xsd to support all tags generated by toXML demo.
+
++ GSP Java version 1.9.3.5(2018-05-30)
+ - [general] fix a bug not treat FCT as table collection expression in SQL like this: select a from TABLE(FCT);
+
++ GSP Java version 1.9.3.4(2018-05-29)
+ - [demos\columnImpact\] fix a bug introduced when support subquery in TTable.getTableName() 
+
++ GSP Java version 1.9.3.4(2018-05-28)
+ - [netezza] supprt overlaps operator in where condition.
+ 
++ GSP Java version 1.9.3.4(2018-05-28)
+ - [general] fix a null exception error which will raised when call TTable.getTableName() when tableType is subquery.
+ 
++ GSP Java version 1.9.3.3(2018-05-22)
+ - [greenplum] support like other_table clause in create table.
+ - [API] add new enum: ETableElementType
+
++ GSP Java version 1.9.3.2(2018-05-18)
+ - [DB2] support DEACTIVATE ROW ACCESS CONTROL clause in ALTER TABLE
+ - [DB2] support UNIQUE keyword in select statement.
+ - [demo\toXML] support create variable statement.
+ 
++ GSP Java version 1.9.3.1(2018-05-17)
+ - [DB2] Support Oracle pl/sql code used in DB2 database by calling oracle parser internally.
+ - [DB2] fix a bug can't get create trigger staetment correctly if there is a for cursor in loop .. end loop statement inside.
+ - [demo\toXML] supprot create alias statement.
+ - [DB2] support create variable statement.
+	
+
++ GSP Java version 1.9.3.1(2018-05-16)
+ - [DB2] lexer error while processing literal '/\_op\_sox/Project/Default/BusinessEntity/%'
+ - [DB2] support PRIOR operator.
+ - [DB2] support Hierarchical Query Clause.
+ - [DB2] can't detect declare statement in create trigger statement.
+ - [DB2] support varchar2 datatype.
+ 
+	
+
++ GSP Java version 1.9.3.1(2018-05-15)
+ - [DB2] support decfloat/CODEUNITS16, CODEUNITS32 datatype.
+ - [DB2] support OCTETS in varchar/char datatype.
+
+ 
++ GSP Java version 1.9.3.0(2018-05-14)
+ - [demo\toXML] support TSetDatabaseObjectStmt in toXML demo.
+ 
++ GSP Java version 1.9.3.0(2018-05-13)
+ - [DB2] Able to get full information from set [current] schema statement.
+ - [DB2] support with no row movement clause in create view statement.
+ - [DB2] support comment statement.
+ - [DB2] support create audit policy statement.
+ - [API] move TCreateAuditPolicyStmt, TAlterAuditPolicyStmt from gudusoft.gsqlparser.stmt.hana to gudusoft.gsqlparser.stmt
+ - [SQL Server] support order by clause before union set operator.
+ - [MySQL] support using clause in execute statement.
+ - [MySQL] support timestamp argument in get_format function.
+ - [MySQL] support time/datatime/double/signed int datatype in cast function.
+ - [MySQL] support between condition in select list.
+ - [MySQL] fully support create database statement.
+ - [MySQL] fix a bug TObjectName.getTableString() and TObjectName.getSchemaString() not return schema and table name correctly in describe statement.
+
+ 
++ GSP Java version 1.9.2.9(2018-05-09)
+ - [SQL Server] Fully support drop schema statement, represented by TDropSchemaSqlStatement
+ - [API] add TDropDatabaseStmt.getDatabaseNameList()
+ - [SQL Server] Fully support drop database statement, represented by TDropDatabaseStmt
+ 
++ GSP Java version 1.9.2.9(2018-05-08)
+ - [DB2] IS keyword can be used as table alias.
+ 
++ GSP Java version 1.9.2.9(2018-05-07)
+ - [Oracle] Support drop partition clause in alter table statement.
+ 
++ GSP Java version 1.9.2.8(2018-04-28)
+ - [DB2] Support create alias statement.
+
++ GSP Java version 1.9.2.7(2018-04-25)
+ - [Oralce] support keep/nokeep/session/global option in create sequence statement.
+ - [Teradata] fix a bug that dividing variables causing parsing issue.
+ - [Teradata] support create macro only having ; within it.
+ - [Teradata] single line comment in stored procedure cause parsing error.
+ - [Teradata] support with/without return clause in declare statement.
+ - [Teradata] support signal and resignal statement in procedure.
+	 
++ GSP Java version 1.9.2.7(2018-04-25)
+ - [Sybase] Able to recogine load table statement.
+ - [General] fix a java.lang.ClassCastException: gudusoft.gsqlparser.nodes.TColumnWithSortOrder cannot be cast to gudusoft.gsqlparser.nodes.TIndexColName
+
++ GSP Java version 1.9.2.6(2018-04-20)
+ - [DB2] fix a bug can't parse if statement if there is a label before it.
+ - [DB2] support NOT SECURED clause in create trigger statement.
+ - [DB2] support diagnostic-string-expression in signal-information clause of signal statement.
+ - [DB2] fix a bug can't fetch create trigger statement correctly if it comes after create procedure statement.
+ - [DB2] support release savepoint statement.
+ 
++ GSP Java version 1.9.2.6(2018-04-20)
+ - [getTableColumn] fix a bug can't detect select list column derived from a subquery which is consists of several select statement by using union/intersect/except operator.
+
++ Java version 1.9.2.5(2018-04-18)
+ - [Netezza] support execute statement.
+ 
++ Java version 1.9.2.4(2018-04-09)
+ - [Oracle/plsql] fix a bug can't detect pacakge name in assignment statement in plsql.
+ - [API] add TObjectName.getPackageToken() returns the source token of Oracle package name.
+ - [API] add TObjectName.getNumberOfPart() which returns the total part number of an objectname. For example: scott.emp which return 2.
+ - [Netezza] Able to get new synonmy name in alter synonmy statement.
+ - [Netezza] Able to pickup SAMEAS tablename in create external table statement using TCreateTableSqlStatement.getAsTable().
+ 
++ Java version 1.9.2.4(2018-04-08)
+ - [demo/formatsql] support RTF output in this release.
+ - [Sybase] support execute command without exec keyword if there is no multiple statements in the batch
+ 
++ Java version 1.9.2.3(2018-04-07)
+ - [SQL Server] support CLOSE { SYMMETRIC KEY key_name | ALL SYMMETRIC KEYS } 
+ - [Teradata] support default clause in parameter declaration.
+ - [Netezza] support substring syntax like substring (arg1,arg2,arg3)
+
++ Java version 1.9.2.3(2018-04-03)
+ - [MySQL] Able to recogine show count(*) errors/warnings
+ 
++ Java version 1.9.2.2(2018-04-03)
+ - [Teradata] support select list item with parenthesis around.
+ - [Teradata] support DEFAULT DATE attribute in parameter declaration of create/replace macro statement.
+ 
++ Java version 1.9.2.1(2018-03-29)
+ - [Teradata] support XC, XCF, XCF after character type.
+ - [Teradata] fix a bug can't parse END IF keyword after elseif clause directly.
+ - [Teradata] support while statement.
+ - [Teradata] fix a bug can't recognize ( symbol before datatype in create table statement.
+ - [Teradata] support DECLARE EXIT HANDLER/DECLARE CONTINUE HANDLER;
+ 
+
++ Java version 1.9.2.1(2018-03-27)
+ - [Teradata] fix a bug can't parse quaify clause after column alias.
+
++ Java version 1.9.2.0(2018-03-26)
+ - [SQL Server] support IF EXISTS clause in drop table statement.
+ - [MySQL] support qualified name in describe statement.
+ 
+ 
++ Java version 1.9.2.0(2018-03-26)
+ - [Hana] support all statements of Hana including create procedure/function/trigger stored procedure.
+
++ Java version 1.9.1.2(2018-03-19)
+ - [Hana] support validate user/ldap provider statement.
+ - [Hana] support update statement.
+ - [API] move TUnsetStmt from package gudusoft.gsqlparser.stmt.snowflake; to package gudusoft.gsqlparser.stmt
+ - [Hana] support unload/unset statement.
+ - [Hana] support truncate collection/table statement.
+
++ Java version 1.9.1.2(2018-03-18)
+ - [Hana] support set history session/pse/schema/system license/transaction statement.
+ - [Hana] support rollback statement.
+ - [Hana] support rename collection/column/database/index/table statement.
+ - [Hana] support recover data/database statement.
+ - [Hana] support merge delta/merge statement.
+ - [Hana] support lock table/merge delta statement.
+ - [API] rename THiveLockSqlNode to TLockSqlNode, mover from package gudusoft.gsqlparser.nodes.hive; to package gudusoft.gsqlparser.nodes;
+ - [API] rename THiveLockTable to THiveLockTable and move from package gudusoft.gsqlparser.stmt.hive; to package gudusoft.gsqlparser.stmt
+ - [Hana] support load statement.
+ - [Hana] support insert statement.
+ - [Hana] support export/import statement.
+ - [Hana] support explain plan statement.
+
++ Java version 1.9.1.2(2018-03-15)
+ - [API] move TDropTriggerSqlStatement from package gudusoft.gsqlparser.stmt.postgresql; to package gudusoft.gsqlparser.stmt
+ - [Hana] support drop audit policy, drop certificate/collection/credential statement.
+ - [Hana] support delete statement.
+ - [Hana] support create workload class/mapping statement.
+ - [Hana] support create type/user/usergroup/virtual function/virtual table statement.
+ - [API] TMssqlCreateType move from package gudusoft.gsqlparser.stmt.mssql to package gudusoft.gsqlparser.stmt
+ - [Hana] support create table statement.
+ 
++ Java version 1.9.1.2(2018-03-14)
+ - [Hana] support create synonmy statement.
+ - [Hana] support create role/saml provider resource/schema/sequence/statistics/structured privilege statement.
+ - [API] move TCreateRoleStmt from gudusoft.gsqlparser.stmt.snowflake to gudusoft.gsqlparser.stmt
+ - [Hana] support create JWT provider/LDAP provider/pse/remote resource statement.
+ - [Hana] support create index statement.
+ - [Hana] support create certificate/collection/credential/database/fulltext index/graph workplace statement.
+ 
++ Java version 1.9.1.1(2018-03-12)
+  - [getTableColumn] fix a bug can't link  a un-qualified column to table using IMetaDatabase interface.
+  - [Oracle] support SUBMULTISET condition in plsql if statement.
+  - [Oracle] fix a null exception when processing object_access_expression in toXML demo 
+  - [SQL Server] support masked with clause in create/alter table statement.
+  
++ Java version 1.9.1.0(2018-03-08)
+ - [Oracle] support the combination of GENERATED and NOT NULL keywords in create table statement.
+ - [Oralce] support SUBMULTISET condition.
+ - [Oracle] support for the EXTEND procedure in pl/sql.
+ - [demo/toXML] support CTE in select statement which is not at the top level.
+ 
++ Java version 1.9.0.9(2018-03-07)
+ - [Netezza] support if not exists clause in create table statement.
+ - [Netezza] fully support create synonmy, sequence statement.
+ - [Netezza] fully support drop sequence, grant statement.
+ 
++ Java version 1.9.0.8(2018-03-02)
+ - [MySQL] fails on encountering string literals with a certain form, making it impossible to route stetements containing them
+ 
++ Java version 1.9.0.7(2018-02-26)
+ - [Hana] support create audit policy statement.
+ - [Hana] support call, comment on, commit, connect statement.
+ - [Hana] support backup check, backup data, backup list data statement.
+ - [Netezza] support synonym, drop database, call statement.
+ - [Netezza] parse alter table query which adds multiple columns at a time
+ - [Netezza] support drop procedure statement.
+ - [Hana] support backup cancel, backup catalog delete statement.
+ - [Hana] support alter usergroup, alter view, alter view cache, alter virtual table, alter workload class, alter workload mapping statement.
+
++ Java version 1.9.0.7(2018-02-24)
+  - [API] TAlterUserStmt more from gudusoft.gsqlparser.stmt.snowflake to gudusoft.gsqlparser.stmt
+  - [Hana] support alter table, alter user statement.
+  - [API] TAlterRoleStmt move from gudusoft.gsqlparser.stmt.vertica to gudusoft.gsqlparser.stmt
+  - [Hana] support alter PSE, alter remote source, alter role, alter saml provider, alter sequence, alter statistics, alter system statement.
+
++ Java version 1.9.0.6(2018-02-23)
+  - [Netezza] fix a bug can't handle using clause in create external table statement.
+  - [Hana] support alter audit policy, alter credential, alter database, alter fulltext index, alter index, alter LDAP provider, alter JWT provider statement.
+  
++ Java version 1.9.0.5(2018-02-14)
+  - [demo/dlieange] dlineage improvement.
+  
++ Java version 1.9.0.4(2018-02-06)
+  - [general] fix a null exception error when iterate the convert function call.
+				
++ Java version 1.9.0.3(2018-02-02)
+ - [netezaa] Able to pickup etkTemp info when create table using TEMP clause
+ - [general] fix OutOfMemory error when process nested case statement.
+
+
++ Java version 1.9.0.3(2018-02-01)
+ - [DB2] "-" can't be used as character in identifier.
+ - [DB2] support for cursor name in declare statement.
+ - [DB2] support drop table statement inside create procedure statement.
+ - [Sybase] support order by clause in update statement. 
+ - [Oracle] fix a bug CASE keyword can't be used as table alias.
+
+	
++ Java version 1.9.0.2(2018-01-25)
+  - [netezaa] support merge statement.
+  - [Oracle] fully parse drop procedure statement
+  - [Oracle] fix a bug  TObjectName.schemaString is blank after processing view name in drop MATERIALIZED VIEW statement.	
+  - [netezaa] fully parse drop view statement.
+  - [netezaa] fully parse alter synonmy statement.
+  - [netezaa] fully parse alter schema statement.
+  
++ Java version 1.9.0.1(2018-01-24)
+  - [netezaa] fully parse drop table statement.
+  - [netezaa] fully parse alter database statement.
+  - [netezaa] fully parse alter view statement.
+  - [netezaa] fully parse create user statement.
+  - [netezaa] support create external table .. sameas syntax.
+  - [netezaa] support rename column in alter table statement.
+  - [netezaa] fix a bug can't parse CREATE OR REPLACE materialized VIEW.
+  
++ Java version 1.9.0.1(2018-01-18)
+  - [snowflake] support all snowflake statements.
+  - [snowflake] support truncate table statement, undrop database, schema, table statment, unset, use statement.
+  - [snowflake] support line comment start in #
+
++ Java version 1.9.0.0(2018-01-17)
+  - [snowflake] support show file formats, functions and all show statements.
+  
++ Java version 1.9.0.0(2018-01-16)
+  - [API, general] move gudusoft.gsqlparser.stmt.TRedshiftShow to gudusoft.gsqlparser.stmt.TShowStmt
+  - [API, general] move gudusoft.gsqlparser.stmt.TRedshiftSet to gudusoft.gsqlparser.stmt.TSetStmt
+  - [snowflake] support put, remove, revoke, set, show columns, show databases statement
+  
++ Java version 1.9.0.0(2018-01-15)
+  - [snowflake] support list, merge statement
+  
++ Java version 1.9.0.0(2018-01-12)
+  - [snowflake] support insert statement.
+  - [snowflake] support get statement,grant ownership, grant statement
+  
++ Java version 1.9.0.0(2018-01-11)
+  - [snowflake] support all drop statements.
+  - [snowflake] support drop database, drop file format, drop pipe, drop role, drop network policy, drop monitor rresour
+  - [API,redshift] move gudusoft.gsqlparser.stmt.redshift.TRedshiftDropDatabase to gudusoft.gsqlparser.stmt.TDropDatabaseStmt
+  - [snowflake] support desc statement, drop function,
+
++ Java version 1.9.0.0(2018-01-10)
+  - [snowflake] support delete,
+  - [snowflake] support create user, create warehouse
+
++ Java version 1.9.0.0(2018-01-09)
+  - [snowflake] support create stage, create table,
+  
++ Java version 1.9.0.0(2018-01-08)
+  - [snowflake] support create schema, create sequence, create share,
+  
++ Java version 1.9.0.0(2018-01-03)
+  - [snowflake] support create pipe, create resource monitor, create role,
+  - [snowflake] support copy into statement, create database, create file format,create function, create network policy
+
++ Java version 1.9.0.0(2018-01-03)
+  - [snowflake] support bind variable
+  - [snowflake] support comment, commit statement
